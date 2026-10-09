@@ -1,0 +1,7 @@
+{
+  "opencv_version": "5.0.0",
+  "opencv5_verified": true,
+  "compute": "CPU",
+  "ai_provider": "none",
+  "aws_deployment_verified": false
+}

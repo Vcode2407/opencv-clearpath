@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClearPath — inspect the space ahead</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="masthead"><a class="brand" href="/"><span class="mark">↗</span> ClearPath</a><span id="runtime" class="runtime">Checking vision runtime…</span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">MEASURE THE SPACE. REVIEW THE EVIDENCE.</p><h1>A clearer view<br>of the way through.</h1><p class="lede">Compare an aligned empty view with a new capture. ClearPath projects changed regions onto a measured floor plane and shows where the space narrows.</p></div><aside class="intro-note"><span class="note-icon">⌖</span><strong>Measurements need context.</strong><p>Built for controlled planar scenes. Review every overlay. This tool does not certify accessibility or safety.</p></aside></section>
+    <div class="workspace">
+      <section class="input-panel card">
+        <div class="panel-heading"><span class="step">01</span><div><h2>Choose your view</h2><p>Try a known scene or inspect an image pair.</p></div></div>
+        <div class="tabs" role="tablist" aria-label="Image source"><button id="demo-tab" class="tab active" role="tab" aria-selected="true" aria-controls="demo-panel">Controlled fixtures</button><button id="upload-tab" class="tab" role="tab" aria-selected="false" aria-controls="upload-panel">Your images</button></div>
+        <div id="demo-panel" role="tabpanel"><label for="fixture">Scene</label><select id="fixture"><option>Loading scenes…</option></select><div class="scene-preview"><img id="fixture-preview" alt="Selected controlled walkway fixture"></div><p id="fixture-note" class="helper">Owned synthetic images with independently labelled dimensions.</p></div>
+        <div id="upload-panel" role="tabpanel" hidden>
+          <label for="reference">Empty reference</label><input id="reference" type="file" accept="image/png,image/jpeg"><p class="helper">Same camera, lighting and dimensions as the scene.</p>
+          <label for="scene">Current scene</label><input id="scene" type="file" accept="image/png,image/jpeg">
+          <div id="calibration-picker" hidden><p class="helper">Click four measured floor corners: far-left → far-right → near-right → near-left.</p><canvas id="calibration-canvas" aria-label="Select floor corners on the image" tabindex="0"></canvas><div class="picker-footer"><span id="corner-count">0 of 4 corners</span><button id="reset-corners" class="text-button" type="button">Reset corners</button></div></div>
+          <div class="dimensions"><div><label for="width">Width, m</label><input id="width" type="number" min="0.5" max="10" step="0.01" value="2.4"></div><div><label for="length">Length, m</label><input id="length" type="number" min="0.5" max="30" step="0.01" value="6"></div></div>
+          <p class="helper">Use a flat floor rectangle with known dimensions. Raised objects distort floor projections. PNG/JPEG only; each image below 8 MB and 8 megapixels. Uploads are processed in memory.</p>
+        </div>
+        <div class="target-row"><div><label for="target">Review width, m</label><p class="helper">Your comparison target; not a legal standard.</p></div><input id="target" type="number" min="0.2" max="5" step="0.05" value="1.2"></div>
+        <div id="cloud-token-row" hidden><label for="cloud-token">Deployment access token</label><input id="cloud-token" type="password" autocomplete="off"><button id="unlock" class="text-button" type="button">Load deployment fixtures</button></div>
+        <button id="inspect" class="primary" type="button">Inspect this view <span>↗</span></button>
+        <p id="input-error" class="error" role="alert" hidden></p>
+        <p class="privacy">Local CPU vision · no AI provider connected</p>
+      </section>
+      <section class="results-panel">
+        <div class="panel-heading"><span class="step">02</span><div><h2>Read the evidence</h2><p>Check the capture before trusting a number.</p></div></div>
+        <div id="empty-result" class="empty-result card"><span class="empty-mark">⌖</span><h3>What changes when the path narrows?</h3><p>Choose “Opposing obstacles” to see the measured gap, then try a blurred capture to see why ClearPath asks for another view.</p><div class="empty-steps"><span>Calibrate</span><span>Detect</span><span>Measure</span><span>Review</span></div></div>
+        <div id="result" hidden aria-live="polite">
+          <div id="status-card" class="status-card"><div><span id="status-label" class="eyebrow"></span><h3 id="status-title"></h3></div><span id="status-icon">↗</span></div>
+          <div id="capture-request" class="capture-card card" hidden><h3>Capture another view</h3><ul id="capture-list"></ul><p>No measurement has been released for this capture.</p></div>
+          <div id="metrics" class="metrics"><div class="metric card"><span>Smallest widest span</span><strong id="clearance">—</strong><small id="target-result"></small></div><div class="metric card"><span>Projected changed area</span><strong id="area">—</strong><small id="regions"></small></div></div>
+          <div class="evidence-grid"><figure class="card"><figcaption>Original view · detected regions</figcaption><img id="annotated" alt="Original image with calibrated floor and detected region outlines"></figure><figure id="rectified-figure" class="card"><figcaption>Floor projection · measured span</figcaption><img id="rectified" alt="Rectified floor with changed regions and measured cross-section"></figure></div>
+          <div class="review-note card"><strong>Review before using these measurements.</strong><p id="review-description"></p><label class="review-check"><input id="reviewed" type="checkbox"> I checked the calibration, overlay and limitations.</label><p id="review-state" class="helper">Your review is recorded only in this browser view.</p></div>
+          <details class="card"><summary>How this inspection reached its result</summary><ol id="trace"></ol><p class="helper">Deterministic capture policy and real OpenCV image operations. No language model is connected.</p></details>
+          <details class="card"><summary>Quality measurements and limitations</summary><pre id="quality"></pre><ul id="limitations"></ul></details>
+          <div class="downloads"><button id="download-json" class="secondary" type="button">Download report</button><a id="download-image" class="secondary" download="clearpath-evidence.png">Download evidence</a></div>
+        </div>
+      </section>
+    </div>
+    <footer><span>ClearPath / research prototype</span><span>OpenCV 5 runtime verified locally · AWS deployment pending</span></footer>
+  </main>
+</body>
+</html>

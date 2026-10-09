@@ -1,0 +1,78 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: ClearPath OpenCV CPU service on ECS Express Mode. Deployment remains unvalidated.
+Parameters:
+  ImageUri:
+    Type: String
+    Description: Existing private ECR image URI with an immutable image tag or digest.
+Resources:
+  DemoApiToken:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Description: Bearer token for authorized ClearPath demonstration reviewers.
+      GenerateSecretString:
+        PasswordLength: 40
+        ExcludePunctuation: true
+  TaskExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
+      Policies:
+        - PolicyName: ReadDemoToken
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: secretsmanager:GetSecretValue
+                Resource: !Ref DemoApiToken
+  InfrastructureRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/service-role/AmazonECSInfrastructureRoleforExpressGatewayServices
+  Service:
+    Type: AWS::ECS::ExpressGatewayService
+    Properties:
+      ServiceName: clearpath-vision
+      InfrastructureRoleArn: !GetAtt InfrastructureRole.Arn
+      ExecutionRoleArn: !GetAtt TaskExecutionRole.Arn
+      Cpu: '1024'
+      Memory: '2048'
+      HealthCheckPath: /health
+      PrimaryContainer:
+        Image: !Ref ImageUri
+        ContainerPort: 4181
+        Environment:
+          - Name: CLEARPATH_MODE
+            Value: aws
+        Secrets:
+          - Name: CLEARPATH_API_TOKEN
+            ValueFrom: !Ref DemoApiToken
+      ScalingTarget:
+        MinTaskCount: 1
+        MaxTaskCount: 1
+        AutoScalingMetric: AVERAGE_CPU
+        AutoScalingTargetValue: 70
+Outputs:
+  ServiceArn:
+    Value: !GetAtt Service.ServiceArn
+  Endpoint:
+    Value: !GetAtt Service.Endpoint
+    Description: HTTPS service endpoint; APIs require the privately shared deployment token.
+  TokenSecretArn:
+    Value: !Ref DemoApiToken
+    Description: Secret ARN for authorized operators to retrieve and share privately with judges.

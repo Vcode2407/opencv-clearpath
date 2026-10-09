@@ -1,0 +1,331 @@
+{
+  "version": 1,
+  "seed": 20261010,
+  "kind": "owned synthetic planar fixtures",
+  "fixtures": [
+    {
+      "id": "clear",
+      "title": "Empty walkway",
+      "image": "clear.png",
+      "reference": "reference.png",
+      "truth_mask": "clear.mask.png",
+      "calibration": {
+        "points": [
+          [
+            290.0,
+            82.0
+          ],
+          [
+            610.0,
+            82.0
+          ],
+          [
+            812.0,
+            630.0
+          ],
+          [
+            88.0,
+            630.0
+          ]
+        ],
+        "width_m": 2.4,
+        "length_m": 6.0,
+        "review_width_m": 1.2
+      },
+      "expected": {
+        "status": "review_required",
+        "clearance_m": 2.4,
+        "changed_area_m2": 0.0
+      },
+      "known_limitation": false
+    },
+    {
+      "id": "edge_boxes",
+      "title": "Boxes beside the walkway",
+      "image": "edge_boxes.png",
+      "reference": "reference.png",
+      "truth_mask": "edge_boxes.mask.png",
+      "calibration": {
+        "points": [
+          [
+            290.0,
+            82.0
+          ],
+          [
+            610.0,
+            82.0
+          ],
+          [
+            812.0,
+            630.0
+          ],
+          [
+            88.0,
+            630.0
+          ]
+        ],
+        "width_m": 2.4,
+        "length_m": 6.0,
+        "review_width_m": 1.2
+      },
+      "expected": {
+        "status": "review_required",
+        "clearance_m": 1.8,
+        "changed_area_m2": 0.89
+      },
+      "known_limitation": false
+    },
+    {
+      "id": "pinch",
+      "title": "Opposing obstacles",
+      "image": "pinch.png",
+      "reference": "reference.png",
+      "truth_mask": "pinch.mask.png",
+      "calibration": {
+        "points": [
+          [
+            290.0,
+            82.0
+          ],
+          [
+            610.0,
+            82.0
+          ],
+          [
+            812.0,
+            630.0
+          ],
+          [
+            88.0,
+            630.0
+          ]
+        ],
+        "width_m": 2.4,
+        "length_m": 6.0,
+        "review_width_m": 1.2
+      },
+      "expected": {
+        "status": "review_required",
+        "clearance_m": 0.75,
+        "changed_area_m2": 1.65
+      },
+      "known_limitation": false
+    },
+    {
+      "id": "blocked",
+      "title": "Full-width obstruction",
+      "image": "blocked.png",
+      "reference": "reference.png",
+      "truth_mask": "blocked.mask.png",
+      "calibration": {
+        "points": [
+          [
+            290.0,
+            82.0
+          ],
+          [
+            610.0,
+            82.0
+          ],
+          [
+            812.0,
+            630.0
+          ],
+          [
+            88.0,
+            630.0
+          ]
+        ],
+        "width_m": 2.4,
+        "length_m": 6.0,
+        "review_width_m": 1.2
+      },
+      "expected": {
+        "status": "review_required",
+        "clearance_m": 0.0,
+        "changed_area_m2": 1.68
+      },
+      "known_limitation": false
+    },
+    {
+      "id": "blur",
+      "title": "Out-of-focus capture",
+      "image": "blur.png",
+      "reference": "reference.png",
+      "truth_mask": "blur.mask.png",
+      "calibration": {
+        "points": [
+          [
+            290.0,
+            82.0
+          ],
+          [
+            610.0,
+            82.0
+          ],
+          [
+            812.0,
+            630.0
+          ],
+          [
+            88.0,
+            630.0
+          ]
+        ],
+        "width_m": 2.4,
+        "length_m": 6.0,
+        "review_width_m": 1.2
+      },
+      "expected": {
+        "status": "needs_capture",
+        "clearance_m": 1.65,
+        "changed_area_m2": 0.75
+      },
+      "known_limitation": false
+    },
+    {
+      "id": "glare",
+      "title": "Glare across the floor",
+      "image": "glare.png",
+      "reference": "reference.png",
+      "truth_mask": "glare.mask.png",
+      "calibration": {
+        "points": [
+          [
+            290.0,
+            82.0
+          ],
+          [
+            610.0,
+            82.0
+          ],
+          [
+            812.0,
+            630.0
+          ],
+          [
+            88.0,
+            630.0
+          ]
+        ],
+        "width_m": 2.4,
+        "length_m": 6.0,
+        "review_width_m": 1.2
+      },
+      "expected": {
+        "status": "needs_capture",
+        "clearance_m": 2.4,
+        "changed_area_m2": 0.0
+      },
+      "known_limitation": false
+    },
+    {
+      "id": "shifted",
+      "title": "Camera moved after reference",
+      "image": "shifted.png",
+      "reference": "reference.png",
+      "truth_mask": "shifted.mask.png",
+      "calibration": {
+        "points": [
+          [
+            290.0,
+            82.0
+          ],
+          [
+            610.0,
+            82.0
+          ],
+          [
+            812.0,
+            630.0
+          ],
+          [
+            88.0,
+            630.0
+          ]
+        ],
+        "width_m": 2.4,
+        "length_m": 6.0,
+        "review_width_m": 1.2
+      },
+      "expected": {
+        "status": "needs_capture",
+        "clearance_m": 1.65,
+        "changed_area_m2": 0.75
+      },
+      "known_limitation": false
+    },
+    {
+      "id": "bad_geometry",
+      "title": "Floor too small in the frame",
+      "image": "bad_geometry.png",
+      "reference": "reference.png",
+      "truth_mask": "bad_geometry.mask.png",
+      "calibration": {
+        "points": [
+          [
+            400,
+            200
+          ],
+          [
+            450,
+            200
+          ],
+          [
+            450,
+            240
+          ],
+          [
+            400,
+            240
+          ]
+        ],
+        "width_m": 2.4,
+        "length_m": 6.0,
+        "review_width_m": 1.2
+      },
+      "expected": {
+        "status": "needs_capture",
+        "clearance_m": 2.4,
+        "changed_area_m2": 0.0
+      },
+      "known_limitation": false
+    },
+    {
+      "id": "low_contrast",
+      "title": "Known limitation: low-contrast object",
+      "image": "low_contrast.png",
+      "reference": "reference.png",
+      "truth_mask": "low_contrast.mask.png",
+      "calibration": {
+        "points": [
+          [
+            290.0,
+            82.0
+          ],
+          [
+            610.0,
+            82.0
+          ],
+          [
+            812.0,
+            630.0
+          ],
+          [
+            88.0,
+            630.0
+          ]
+        ],
+        "width_m": 2.4,
+        "length_m": 6.0,
+        "review_width_m": 1.2
+      },
+      "expected": {
+        "status": "review_required",
+        "clearance_m": 1.4,
+        "changed_area_m2": 1.0
+      },
+      "known_limitation": true
+    }
+  ]
+}

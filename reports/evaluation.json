@@ -1,0 +1,128 @@
+{
+  "runtime": {
+    "opencv_version": "5.0.0",
+    "opencv5_verified": true,
+    "compute": "CPU",
+    "ai_provider": "none",
+    "aws_deployment_verified": false
+  },
+  "dataset": "9 deterministic owned planar fixtures; not real-world validation",
+  "summary": {
+    "status_correct": 9,
+    "total": 9,
+    "baseline_mean_iou": 1.0,
+    "baseline_mean_clearance_error_m": 0.0
+  },
+  "cases": [
+    {
+      "fixture": "clear",
+      "expected_status": "review_required",
+      "actual_status": "review_required",
+      "status_correct": true,
+      "known_limitation": false,
+      "capture_requests": [],
+      "mask_iou": 1.0,
+      "clearance_truth_m": 2.4,
+      "clearance_measured_m": 2.4,
+      "clearance_abs_error_m": 0.0,
+      "area_truth_m2": 0.0,
+      "area_measured_m2": 0.0
+    },
+    {
+      "fixture": "edge_boxes",
+      "expected_status": "review_required",
+      "actual_status": "review_required",
+      "status_correct": true,
+      "known_limitation": false,
+      "capture_requests": [],
+      "mask_iou": 1.0,
+      "clearance_truth_m": 1.8,
+      "clearance_measured_m": 1.8,
+      "clearance_abs_error_m": 0.0,
+      "area_truth_m2": 0.89,
+      "area_measured_m2": 0.89
+    },
+    {
+      "fixture": "pinch",
+      "expected_status": "review_required",
+      "actual_status": "review_required",
+      "status_correct": true,
+      "known_limitation": false,
+      "capture_requests": [],
+      "mask_iou": 1.0,
+      "clearance_truth_m": 0.75,
+      "clearance_measured_m": 0.75,
+      "clearance_abs_error_m": 0.0,
+      "area_truth_m2": 1.65,
+      "area_measured_m2": 1.65
+    },
+    {
+      "fixture": "blocked",
+      "expected_status": "review_required",
+      "actual_status": "review_required",
+      "status_correct": true,
+      "known_limitation": false,
+      "capture_requests": [],
+      "mask_iou": 1.0,
+      "clearance_truth_m": 0.0,
+      "clearance_measured_m": 0.0,
+      "clearance_abs_error_m": 0.0,
+      "area_truth_m2": 1.68,
+      "area_measured_m2": 1.68
+    },
+    {
+      "fixture": "blur",
+      "expected_status": "needs_capture",
+      "actual_status": "needs_capture",
+      "status_correct": true,
+      "known_limitation": false,
+      "capture_requests": [
+        "Retake the scene and empty reference in focus; keep the same camera position."
+      ]
+    },
+    {
+      "fixture": "glare",
+      "expected_status": "needs_capture",
+      "actual_status": "needs_capture",
+      "status_correct": true,
+      "known_limitation": false,
+      "capture_requests": [
+        "Retake from an angle without glare or deep shadow; keep the reference aligned."
+      ]
+    },
+    {
+      "fixture": "shifted",
+      "expected_status": "needs_capture",
+      "actual_status": "needs_capture",
+      "status_correct": true,
+      "known_limitation": false,
+      "capture_requests": [
+        "The background changed. Restore the original camera pose and lighting, then capture a new aligned pair."
+      ]
+    },
+    {
+      "fixture": "bad_geometry",
+      "expected_status": "needs_capture",
+      "actual_status": "needs_capture",
+      "status_correct": true,
+      "known_limitation": false,
+      "capture_requests": [
+        "The floor rectangle is too small or foreshortened. Move nearer and use a more overhead angle."
+      ]
+    },
+    {
+      "fixture": "low_contrast",
+      "expected_status": "review_required",
+      "actual_status": "review_required",
+      "status_correct": true,
+      "known_limitation": true,
+      "capture_requests": [],
+      "mask_iou": 0.0,
+      "clearance_truth_m": 1.4,
+      "clearance_measured_m": 2.4,
+      "clearance_abs_error_m": 1.0,
+      "area_truth_m2": 1.0,
+      "area_measured_m2": 0.0
+    }
+  ]
+}
