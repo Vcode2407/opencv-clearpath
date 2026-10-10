@@ -8,16 +8,16 @@ AWS recommends ECS Express Mode as App Runner's replacement. App Runner is close
 
 ## Validate locally first
 
-Docker CLI is installed here, but the Linux daemon was unavailable. These commands are preparation, not completed validation:
+The Linux image has been built and exercised on the local Docker Desktop engine, including missing/wrong-token rejection and an actual OpenCV 5 fixture inspection. [Recorded build identity, commands and results](CONTAINER_VERIFICATION.md). This validates local packaging; AWS execution remains pending. To repeat it:
 
 ```powershell
 docker build -t clearpath:0.1 .
 # Choose a fresh random token; keep it out of source control and recordings.
 $env:CLEARPATH_API_TOKEN = '<fresh-random-token-at-least-24-characters>'
-docker run --rm -p 127.0.0.1:4182:4181 -e CLEARPATH_API_TOKEN clearpath:0.1
+docker run --rm -p 127.0.0.1:4191:4181 -e CLEARPATH_API_TOKEN clearpath:0.1
 ```
 
-Visit http://127.0.0.1:4182, enter the token, load fixtures, and inspect. This tests cloud-mode packaging locally; it does not prove AWS execution. The base-image tag is pinned to a Python patch release, but release preparation should also record its digest and dependency artifact hashes.
+Visit http://127.0.0.1:4191, enter the token, load fixtures, and inspect. Stop the retained verification container before reusing that port. This tests cloud-mode packaging locally; it does not prove AWS execution. The recorded verification includes the resolved base-image digest and build-input hashes; deployment preparation should additionally retain dependency artifact hashes and the final ECR image digest.
 
 ## Cloud milestone
 

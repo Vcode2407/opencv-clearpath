@@ -42,8 +42,8 @@ Before real-world use, acquire owned registered physical captures with measured 
 
 ## AWS deployment status
 
-The same actual OpenCV 5 pipeline is containerized for meaningful AWS CPU processing on ECS Express Mode/Fargate; this is prepared infrastructure, **not a deployed service**. A generated Secrets Manager token protects inspection APIs. Docker Desktop's Linux engine was unavailable during implementation, so neither the image build nor cloud manifest has been executed. No AWS calls, credentials or provider-model calls were used. [Deployment preparation and required evidence](AWS.md).
+The same actual OpenCV 5 pipeline is containerized for meaningful AWS CPU processing on ECS Express Mode/Fargate; this is prepared infrastructure, **not a deployed service**. The Linux image built successfully on Docker Desktop and passed bearer-authentication probes and an actual opposing-obstacles inspection, returning 0.75 m and 1.65 m². [Build identity and local container evidence](CONTAINER_VERIFICATION.md). A generated Secrets Manager token is prepared for deployment. The cloud manifest has not been validated or deployed. No AWS calls, credentials or provider-model calls were used. [Deployment preparation and required evidence](AWS.md).
 
 ## Remaining entry work
 
-Verify the organizer's proposal/registration requirements, validate the Linux image, deploy and record real AWS execution, add owned physical capture evaluation, finish judge access instructions, and record an English demo up to five minutes. No COOL/Graviton award, real-world accuracy or live AWS claim is currently made. [Submission checklist](HACKATHON.md).
+Verify the organizer's proposal/registration requirements, deploy and record real AWS execution, add owned physical capture evaluation, finish judge access instructions, and record an English demo up to five minutes. No COOL/Graviton award, real-world accuracy or live AWS claim is currently made. [Submission checklist](HACKATHON.md).
