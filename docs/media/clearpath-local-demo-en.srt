@@ -1,0 +1,50 @@
+1
+00:00:00,000 --> 00:00:14,000
+ClearPath compares a scene with an aligned empty reference. This is a local development
+recording of real CPU OpenCV five, using owned synthetic fixtures. AWS deployment and
+eligibility remain pending.
+
+2
+00:00:14,000 --> 00:00:32,000
+The opposing-obstacles fixture has a measured two point four by six metre floor. The real
+inspection reports a zero point seven five metre cross-section and one point six five
+square metres of changed area.
+
+3
+00:00:32,000 --> 00:00:48,000
+The overlays show the detected changes and calibrated floor projection. This number is the
+smallest of each row's widest free segments. It does not prove a continuous route for a
+person or wheelchair.
+
+4
+00:00:48,000 --> 00:01:04,000
+I acknowledge reviewing the calibration, overlay, and limits, then download the actual
+report. Review records an acknowledgement; it does not turn a synthetic result into a
+safety certification.
+
+5
+00:01:04,000 --> 00:01:24,000
+Now the out-of-focus capture. The quality gate requests another view instead of releasing
+a measurement. The API returns no metrics, and the browser hides the old numbers.
+
+6
+00:01:24,000 --> 00:01:38,000
+Recapture is an actual decision from image evidence. The operator must supply a better
+aligned image pair. This policy is deterministic, with no language model connected.
+
+7
+00:01:38,000 --> 00:01:56,000
+The low-contrast case exposes a failure. The detector misses the object and reports two
+point four metres, even though the independent fixture label is one point four metres.
+
+8
+00:01:56,000 --> 00:02:14,000
+That is a one metre overestimate. The green result is misleading here. We retain this case
+in evaluation and disclose it rather than claim general accuracy from ideal synthetic
+fixtures.
+
+9
+00:02:14,000 --> 00:02:30,000
+The trace records actual OpenCV operations and review limits. The Linux container is
+separately verified locally. Actual AWS processing, physical-capture validation, and
+organizer eligibility confirmation remain pending.

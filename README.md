@@ -6,6 +6,10 @@ Public MIT source: [Vcode2407/opencv-clearpath](https://github.com/Vcode2407/ope
 
 This is a functioning local research prototype, not a finished hackathon entry. OpenCV `5.0.0` is verified in Python `3.12.10`. AWS deployment and the event's compute-proposal/registration gate remain unproven. No AI provider is connected.
 
+[Watch the 2:30 English local development demo](docs/media/clearpath-local-demo-en.mp4): real CPU inspections, recapture with no metrics, and the disclosed 1.00 m low-contrast overestimate. [Transcript and recording evidence](docs/DEMO.md) · [Judge reproduction guide](docs/JUDGING.md). The video contains owned synthetic fixtures; AWS and physical-capture evidence are still pending.
+
+![Actual ClearPath pinch inspection with English captions](docs/media/clearpath-demo-pinch.png)
+
 ## Run on Windows
 
 From this directory in PowerShell:
@@ -46,7 +50,7 @@ CLI image-pair inspection:
 
 ## Evidence and boundaries
 
-29 vision/API tests passed, JavaScript syntax passed, and `pip check` passed. Browser visual QA is coordinated separately. [Evaluation](reports/evaluation.json) includes all nine owned synthetic fixtures and the low-contrast failure. Four normal planar fixtures yield mask IoU `1.0` and clearance mean absolute error `0.00 m`; these controlled round-trip fixtures **do not establish real-world accuracy**.
+29 vision/API tests passed, JavaScript syntax passed, and `pip check` passed. The recorded isolated-browser workflow also verifies actual API responses, reviewed JSON download, recapture with hidden metrics, and the retained low-contrast failure; [evidence](docs/media/clearpath-recording-evidence.json). [Evaluation](reports/evaluation.json) includes all nine owned synthetic fixtures and the low-contrast failure. Four normal planar fixtures yield mask IoU `1.0` and clearance mean absolute error `0.00 m`; these controlled round-trip fixtures **do not establish real-world accuracy**.
 
 The measured span is the minimum, over floor rows, of each row's widest free segment. It does not guarantee a continuous route for a person, wheelchair, or vehicle. Changed-region projections are approximate footprints only for flat/contact regions; raised objects, shadows, reflections, unknown camera changes and similar colours can mislead the detector. The nominal raster is 1 cm, not a claim of 1 cm accuracy. This application does not certify accessibility, legal compliance or safety.
 

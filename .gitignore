@@ -6,4 +6,5 @@ __pycache__/
 .env.*
 reports/inspection.json
 uploads/
+artifacts/
 *.pem

@@ -69,9 +69,11 @@ The application does not certify accessibility, legal compliance, route safety, 
 
 The Linux image is tested locally. The entry still needs actual AWS processing evidence, judge access, and confirmation of the proposal/registration requirements. No AWS credentials, credit eligibility, deployment, or Graviton performance comparison are assumed.
 
-## Demo outline — four minutes
+## Recorded development demo and final outline
 
-The current local scenes can be recorded as development evidence. AWS footage must come from actual verified execution before presenting the final entry as complete.
+The [2:30 narrated English local development video](media/clearpath-local-demo-en.mp4) now shows actual CPU OpenCV 5 inspections, reviewed JSON export, recapture with no metrics, and the low-contrast 1.00 m overestimate. [Transcript and response evidence](DEMO.md), [judge reproduction guide](JUDGING.md). It uses owned synthetic fixtures and explicitly discloses AWS/eligibility as pending. Narration was synthesized locally with Microsoft Zira Desktop.
+
+This is a local development clip, not the final qualifying video. The final entry still needs team introduction, architecture and genuine AWS footage, plus verified judge-accessible playback. The proposed four-minute outline below includes those additions.
 
 | Time | Action to record |
 | --- | --- |
@@ -92,7 +94,7 @@ The current local scenes can be recorded as development evidence. AWS footage mu
 | Source repository/archive | https://github.com/Vcode2407/opencv-clearpath — public MIT source, owned fixtures and reproducible setup. |
 | Working endpoint or arranged screen-share | Local `http://127.0.0.1:4181`; final judge-access arrangement pending. |
 | Actual AWS workload/deployment evidence | Linux image and local server-side inspection verified; actual AWS deployment, resource identifiers, hosted inspection and judge access pending. |
-| Video, no longer than five minutes | Recording and judge-accessible upload pending. |
+| Video, no longer than five minutes | Actual 2:30 local English development MP4, captions, transcript and evidence exist in the public source. Final team/architecture/AWS footage and verified public/unlisted playback URL remain pending. |
 | Measured results | Synthetic evaluation exists; physical-capture evaluation pending. |
 | Compute proposal / registration gate | Organizer confirmation and evidence pending. Devpost registration alone does not establish this requirement. |
 | Special awards | None claimed; COOL/Arm and Agentic Vision eligibility unverified. |

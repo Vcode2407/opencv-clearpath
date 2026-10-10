@@ -1,0 +1,69 @@
+{
+  "recordedAt": "2026-10-10T18:13:01.168Z",
+  "sourceCommit": "4c515d42976ef4b405a3b87acf397fdb7636803a",
+  "purpose": "Local synthetic development evidence, not final qualifying submission video.",
+  "durationSeconds": 150,
+  "video": {
+    "codec": "H.264",
+    "pixelFormat": "yuv420p",
+    "width": 1600,
+    "height": 1020,
+    "fps": 25,
+    "browserViewport": [
+      1600,
+      900
+    ],
+    "captionFooterHeight": 120
+  },
+  "audio": {
+    "codec": "AAC",
+    "language": "English",
+    "voice": "Microsoft Zira Desktop",
+    "locallySynthesized": true,
+    "sourcePcmRms": 2681.97
+  },
+  "verification": {
+    "browserWorkflow": "passed",
+    "fullFfmpegDecode": "passed",
+    "keyframesVisuallyInspected": [
+      28,
+      75,
+      108,
+      142
+    ],
+    "visionApiTests": {
+      "passed": 29,
+      "failed": 0
+    }
+  },
+  "awsDeploymentVerified": false,
+  "physicalCaptureValidation": "pending",
+  "eligibilityVerified": false,
+  "finalVideoTeamArchitectureAwsMaterial": "pending",
+  "files": {
+    "clearpath-demo-known-failure.png": {
+      "bytes": 546187,
+      "sha256": "d1604f386e8ff65eb7f8dcc4d96406281d81b32a4a3c54c6e883e3a649c72062"
+    },
+    "clearpath-demo-pinch.png": {
+      "bytes": 573343,
+      "sha256": "eefa458c7eaa2766ddcc622e29c971472de28654771be82e91f4345f12e4f8f6"
+    },
+    "clearpath-demo-recapture.png": {
+      "bytes": 433860,
+      "sha256": "1c452bd79b022b289a8157435074c2a58c6ef9daaf9d4ba1b1b5fcdcd5d25f08"
+    },
+    "clearpath-local-demo-en.mp4": {
+      "bytes": 5023080,
+      "sha256": "00442045d23b33a6d796009d099af56e22e90298dcdd548b21623964fe646077"
+    },
+    "clearpath-local-demo-en.srt": {
+      "bytes": 2077,
+      "sha256": "c9fb7237164d0ec42ceb8ce1f1715a93030559dd08a5d01b48a68672cf67f5cd"
+    },
+    "clearpath-recording-evidence.json": {
+      "bytes": 10926,
+      "sha256": "7a37947a6e98053ef941445287cc83d8b722b0bb97995b44b54375046d28d291"
+    }
+  }
+}

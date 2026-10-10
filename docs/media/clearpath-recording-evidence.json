@@ -1,0 +1,356 @@
+{
+  "recordedAt": "2026-10-10T18:13:01.168Z",
+  "developmentClip": true,
+  "syntheticFixtures": true,
+  "awsDeploymentVerified": false,
+  "eligibilityVerified": false,
+  "actions": [
+    {
+      "seconds": 14.691517,
+      "label": "Inspected actual owned pinch fixture"
+    },
+    {
+      "seconds": 32.056219500000005,
+      "label": "Viewed actual calibrated floor projection and detected regions"
+    },
+    {
+      "seconds": 48.650557199999994,
+      "label": "Acknowledged review and downloaded the actual JSON report"
+    },
+    {
+      "seconds": 64.215663,
+      "label": "Inspected actual owned blur fixture"
+    },
+    {
+      "seconds": 84.0172389,
+      "label": "Recapture request withheld metrics in both UI and API"
+    },
+    {
+      "seconds": 98.5562012,
+      "label": "Inspected actual owned low_contrast fixture"
+    },
+    {
+      "seconds": 116.0848859,
+      "label": "Showed the missed low-contrast object and misleading 2.40 m output"
+    },
+    {
+      "seconds": 134.0663274,
+      "label": "Expanded actual deterministic vision trace; narration discloses pending AWS/physical/eligibility gates"
+    }
+  ],
+  "reports": {
+    "pinch": {
+      "annotated_image": "[PNG data URL omitted from public JSON; visible in recorded UI]",
+      "calibration": {
+        "length_m": 6,
+        "points": [
+          [
+            290,
+            82
+          ],
+          [
+            610,
+            82
+          ],
+          [
+            812,
+            630
+          ],
+          [
+            88,
+            630
+          ]
+        ],
+        "review_width_m": 1.2,
+        "width_m": 2.4
+      },
+      "capture_requests": [],
+      "limitations": [
+        "Measurements describe projected changed regions, not semantic objects or full 3D footprints.",
+        "Flat/contact regions, a planar floor, measured corners and an unchanged camera are required.",
+        "Low-contrast obstacles, shadows, reflective surfaces and occlusion can cause missed or false regions.",
+        "Clearance is the smallest widest free cross-section; it is not a continuous body-width route guarantee.",
+        "This is a review aid. It does not certify accessibility, compliance or safety."
+      ],
+      "measurements": {
+        "below_review_target": true,
+        "bottleneck_row_px": 210,
+        "bottleneck_span_px": [
+          75,
+          150
+        ],
+        "bottleneck_y_m": 2.1,
+        "changed_area_m2": 1.65,
+        "clearance_m": 0.75,
+        "obstacle_count": 2,
+        "obstacles": [
+          {
+            "area_m2": 0.75,
+            "bounds_m": [
+              0,
+              2.1,
+              0.75,
+              1
+            ],
+            "id": 1
+          },
+          {
+            "area_m2": 0.9,
+            "bounds_m": [
+              1.5,
+              2.1,
+              0.9,
+              1
+            ],
+            "id": 2
+          }
+        ],
+        "point_route_exists": true,
+        "review_width_m": 1.2
+      },
+      "method": "Registered empty-reference difference, calibrated floor homography, morphology, connected components",
+      "occupancy_image": "[PNG data URL omitted]",
+      "quality": {
+        "changed_fraction": 0.1146,
+        "clipped_fraction": 0,
+        "focus_variance": 133.73,
+        "outside_difference": 0.01,
+        "reference_focus_variance": 150.42,
+        "registration_response": 0.9197,
+        "registration_shift_px": [
+          0,
+          0
+        ]
+      },
+      "rectified_image": "[PNG data URL omitted; visible in recorded UI]",
+      "runtime": {
+        "ai_provider": "none",
+        "aws_deployment_verified": false,
+        "compute": "CPU",
+        "opencv5_verified": true,
+        "opencv_version": "5.0.0"
+      },
+      "source": "Opposing obstacles",
+      "status": "review_required",
+      "trace": [
+        {
+          "outcome": "accepted",
+          "step": "validate_geometry"
+        },
+        {
+          "outcome": "accepted",
+          "step": "check_capture_quality"
+        },
+        {
+          "outcome": "240 \u00d7 600 pixels; nominal 1 cm sampling",
+          "step": "project_floor"
+        },
+        {
+          "outcome": "2 regions; 0.75 m cross-section",
+          "step": "measure_changed_regions"
+        },
+        {
+          "outcome": "Review the region overlay, calibration and limitations before using the measurements.",
+          "step": "request_human_review"
+        }
+      ]
+    },
+    "blur": {
+      "annotated_image": "[PNG data URL omitted from public JSON; visible in recorded UI]",
+      "calibration": {
+        "length_m": 6,
+        "points": [
+          [
+            290,
+            82
+          ],
+          [
+            610,
+            82
+          ],
+          [
+            812,
+            630
+          ],
+          [
+            88,
+            630
+          ]
+        ],
+        "review_width_m": 1.2,
+        "width_m": 2.4
+      },
+      "capture_requests": [
+        "Retake the scene and empty reference in focus; keep the same camera position."
+      ],
+      "limitations": [
+        "Measurements describe projected changed regions, not semantic objects or full 3D footprints.",
+        "Flat/contact regions, a planar floor, measured corners and an unchanged camera are required.",
+        "Low-contrast obstacles, shadows, reflective surfaces and occlusion can cause missed or false regions.",
+        "Clearance is the smallest widest free cross-section; it is not a continuous body-width route guarantee.",
+        "This is a review aid. It does not certify accessibility, compliance or safety."
+      ],
+      "measurements": null,
+      "method": "Registered empty-reference difference, calibrated floor homography, morphology, connected components",
+      "quality": {
+        "clipped_fraction": 0,
+        "focus_variance": 0.61,
+        "outside_difference": 2.83,
+        "reference_focus_variance": 150.42,
+        "registration_response": 0.1501,
+        "registration_shift_px": [
+          -0.99,
+          0.03
+        ]
+      },
+      "runtime": {
+        "ai_provider": "none",
+        "aws_deployment_verified": false,
+        "compute": "CPU",
+        "opencv5_verified": true,
+        "opencv_version": "5.0.0"
+      },
+      "source": "Out-of-focus capture",
+      "status": "needs_capture",
+      "trace": [
+        {
+          "outcome": "accepted",
+          "step": "validate_geometry"
+        },
+        {
+          "outcome": "retry",
+          "step": "check_capture_quality"
+        }
+      ]
+    },
+    "low_contrast": {
+      "annotated_image": "[PNG data URL omitted from public JSON; visible in recorded UI]",
+      "calibration": {
+        "length_m": 6,
+        "points": [
+          [
+            290,
+            82
+          ],
+          [
+            610,
+            82
+          ],
+          [
+            812,
+            630
+          ],
+          [
+            88,
+            630
+          ]
+        ],
+        "review_width_m": 1.2,
+        "width_m": 2.4
+      },
+      "capture_requests": [],
+      "limitations": [
+        "Measurements describe projected changed regions, not semantic objects or full 3D footprints.",
+        "Flat/contact regions, a planar floor, measured corners and an unchanged camera are required.",
+        "Low-contrast obstacles, shadows, reflective surfaces and occlusion can cause missed or false regions.",
+        "Clearance is the smallest widest free cross-section; it is not a continuous body-width route guarantee.",
+        "This is a review aid. It does not certify accessibility, compliance or safety."
+      ],
+      "measurements": {
+        "below_review_target": false,
+        "bottleneck_row_px": 0,
+        "bottleneck_span_px": [
+          0,
+          240
+        ],
+        "bottleneck_y_m": 0,
+        "changed_area_m2": 0,
+        "clearance_m": 2.4,
+        "obstacle_count": 0,
+        "obstacles": [],
+        "point_route_exists": true,
+        "review_width_m": 1.2
+      },
+      "method": "Registered empty-reference difference, calibrated floor homography, morphology, connected components",
+      "occupancy_image": "[PNG data URL omitted]",
+      "quality": {
+        "changed_fraction": 0,
+        "clipped_fraction": 0,
+        "focus_variance": 138.34,
+        "outside_difference": 0,
+        "reference_focus_variance": 150.42,
+        "registration_response": 0.981,
+        "registration_shift_px": [
+          0,
+          0
+        ]
+      },
+      "rectified_image": "[PNG data URL omitted; visible in recorded UI]",
+      "runtime": {
+        "ai_provider": "none",
+        "aws_deployment_verified": false,
+        "compute": "CPU",
+        "opencv5_verified": true,
+        "opencv_version": "5.0.0"
+      },
+      "source": "Known limitation: low-contrast object",
+      "status": "review_required",
+      "trace": [
+        {
+          "outcome": "accepted",
+          "step": "validate_geometry"
+        },
+        {
+          "outcome": "accepted",
+          "step": "check_capture_quality"
+        },
+        {
+          "outcome": "240 \u00d7 600 pixels; nominal 1 cm sampling",
+          "step": "project_floor"
+        },
+        {
+          "outcome": "0 regions; 2.40 m cross-section",
+          "step": "measure_changed_regions"
+        },
+        {
+          "outcome": "Review the region overlay, calibration and limitations before using the measurements.",
+          "step": "request_human_review"
+        }
+      ]
+    }
+  },
+  "runtime": {
+    "ai_provider": "none",
+    "aws_deployment_verified": false,
+    "compute": "CPU",
+    "mode": "local",
+    "opencv5_verified": true,
+    "opencv_version": "5.0.0",
+    "status": "ok"
+  },
+  "reviewedDownload": {
+    "humanReviewAcknowledged": true,
+    "clearance_m": 0.75,
+    "runtime": {
+      "ai_provider": "none",
+      "aws_deployment_verified": false,
+      "compute": "CPU",
+      "opencv5_verified": true,
+      "opencv_version": "5.0.0"
+    }
+  },
+  "lowContrastComparison": {
+    "fixture": "low_contrast",
+    "independentTruthSpan_m": 1.4,
+    "reportedSpan_m": 2.4,
+    "overestimate_m": 1,
+    "independentTruthArea_m2": 1,
+    "reportedArea_m2": 0
+  },
+  "result": "passed",
+  "recordingSeconds": 150.01528140000002,
+  "sourceCommit": "4c515d42976ef4b405a3b87acf397fdb7636803a",
+  "recordingMethod": "Actual isolated Chromium browser controls and real Flask/CPU OpenCV API responses; no response stubs.",
+  "imagePayloads": "PNG data URLs explicitly omitted from public JSON; unchanged actual output visible in video.",
+  "publicVideo": "clearpath-local-demo-en.mp4"
+}

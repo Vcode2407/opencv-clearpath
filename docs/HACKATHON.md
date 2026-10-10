@@ -21,12 +21,15 @@ Build this as a distinct project. No assertion is made that an identical entry c
 - [x] Judge-accessible MIT repository: https://github.com/Vcode2407/opencv-clearpath. Public source is not mandatory for this event.
 - [ ] Actual AWS deployment/reproduction instructions and runtime evidence.
 - [ ] Working endpoint or arranged judge screen-share, with needed access details.
-- [ ] English demo video no longer than five minutes: team, working application, architecture and measured results.
+- [x] Actual **2:30 English local development video**, captions, transcript and response evidence: [recording](DEMO.md). Shows the application, principal synthetic results, recapture and known failure. It does not show an AWS deployment.
+- [ ] Final judge-accessible video no longer than five minutes: add team introduction, architecture and genuine AWS runtime evidence, then verify public/unlisted playback access.
 - [ ] Final report updated with physical-capture evaluation, deployment evidence, limitations and licensing.
 
 Optional Agentic Vision award requires perception to alter subsequent actions; current deterministic quality gates produce recapture requests, but award eligibility has not been confirmed. Do not claim an LLM agent. COOL requires actual Graviton/Arm workload and measured baseline; it is outside the first milestone.
 
 ## Four-minute demo script
+
+The completed [2:30 local development clip](DEMO.md) covers the core browser flow with actual response assertions. The outline below describes final additional material; AWS footage must come from actual execution.
 
 0:00–0:30 — Introduce the temporary-obstruction evidence problem and controlled planar scope. Show actual OpenCV 5 runtime.
 
