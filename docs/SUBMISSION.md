@@ -67,7 +67,7 @@ ClearPath detects image changes, not semantic obstacles. The projection assumes 
 
 The application does not certify accessibility, legal compliance, route safety, or body-width traversal. Human review cannot turn the current synthetic results into a certification. Before practical use, collect owned physical captures with measured markers, varied lighting and camera poses, repeated annotations, and held-out error analysis.
 
-The entry also needs a tested Linux image, actual AWS processing evidence, judge access, and confirmation of the proposal/registration requirements. No AWS credentials, credit eligibility, deployment, or Graviton performance comparison are assumed.
+The Linux image is tested locally. The entry still needs actual AWS processing evidence, judge access, and confirmation of the proposal/registration requirements. No AWS credentials, credit eligibility, deployment, or Graviton performance comparison are assumed.
 
 ## Demo outline — four minutes
 
@@ -89,9 +89,9 @@ The current local scenes can be recorded as development evidence. AWS footage mu
 | Name and tagline | ClearPath; draft above. |
 | English description | Draft above; review before pasting. |
 | Technical report and architecture | Local drafts exist; update with physical-capture and actual AWS evidence. |
-| Source repository/archive | Judge-accessible URL pending; local source and owned fixtures have an MIT license. |
+| Source repository/archive | https://github.com/Vcode2407/opencv-clearpath — public MIT source, owned fixtures and reproducible setup. |
 | Working endpoint or arranged screen-share | Local `http://127.0.0.1:4181`; final judge-access arrangement pending. |
-| Actual AWS workload/deployment evidence | Pending Linux image validation, authorized deployment, real server-side inspection, resource identifiers, and reproduction steps. |
+| Actual AWS workload/deployment evidence | Linux image and local server-side inspection verified; actual AWS deployment, resource identifiers, hosted inspection and judge access pending. |
 | Video, no longer than five minutes | Recording and judge-accessible upload pending. |
 | Measured results | Synthetic evaluation exists; physical-capture evaluation pending. |
 | Compute proposal / registration gate | Organizer confirmation and evidence pending. Devpost registration alone does not establish this requirement. |

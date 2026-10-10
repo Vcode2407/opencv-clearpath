@@ -18,7 +18,7 @@ Build this as a distinct project. No assertion is made that an identical entry c
 - [x] Working local CPU application, browser, API and CLI.
 - [x] Pinned dependencies, run/test instructions, owned fixture labels and automated evaluation.
 - [x] Draft technical report and architecture diagram, with failures and responsible-use limitations.
-- [ ] Judge-accessible repository or source archive; public source is not mandatory for this event.
+- [x] Judge-accessible MIT repository: https://github.com/Vcode2407/opencv-clearpath. Public source is not mandatory for this event.
 - [ ] Actual AWS deployment/reproduction instructions and runtime evidence.
 - [ ] Working endpoint or arranged judge screen-share, with needed access details.
 - [ ] English demo video no longer than five minutes: team, working application, architecture and measured results.

@@ -2,6 +2,8 @@
 
 ClearPath measures projected changes in a controlled walkway using an aligned empty reference, four measured floor corners, and **real CPU OpenCV 5**. The browser shows the region overlay, the narrowest widest free cross-section, capture problems, and the evidence to review.
 
+Public MIT source: [Vcode2407/opencv-clearpath](https://github.com/Vcode2407/opencv-clearpath). [Automated checks](https://github.com/Vcode2407/opencv-clearpath/actions) exercise vision/API tests on Windows and Ubuntu, save the synthetic evaluation, and build a non-root Linux container. CI does not deploy to AWS or establish physical-image accuracy.
+
 This is a functioning local research prototype, not a finished hackathon entry. OpenCV `5.0.0` is verified in Python `3.12.10`. AWS deployment and the event's compute-proposal/registration gate remain unproven. No AI provider is connected.
 
 ## Run on Windows
