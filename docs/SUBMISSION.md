@@ -32,7 +32,7 @@ OpenCV validates the floor geometry and checks focus, clipping, background chang
 
 The detector consumes images and calibration, not expected answers. The fixture generator separately creates owned synthetic scenes and truth masks; the evaluation compares the detector's results with those labels. Reports include runtime information, policy decisions, quality values, measurements when accepted, annotated images, and limitations.
 
-An ECS Express Mode/Fargate container and infrastructure manifest are prepared for the same OpenCV CPU workload on AWS. The Linux image has now passed a real local build, bearer-authentication checks, and a server-side OpenCV fixture inspection; [recorded evidence](CONTAINER_VERIFICATION.md). The cloud manifest remains unvalidated and undeployed, and no AWS runtime is claimed. Actual cloud execution and judge access remain pending.
+An ECS Express Mode/Fargate container and infrastructure manifest are prepared for the same OpenCV CPU workload on AWS. The Linux image has now passed a real local build, bearer-authentication checks, and a server-side OpenCV fixture inspection; [recorded evidence](CONTAINER_VERIFICATION.md). The manifest passed the [offline CloudFormation schema preflight](AWS.md#offline-cloudformation-schema-preflight) with zero errors and warnings. AWS service-side validation and deployment have not been performed, and no AWS runtime is claimed. Actual cloud execution and judge access remain pending.
 
 ## Measured local results
 
