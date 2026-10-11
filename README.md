@@ -4,7 +4,7 @@ ClearPath measures projected changes in a controlled walkway using an aligned em
 
 Public MIT source: [Vcode2407/opencv-clearpath](https://github.com/Vcode2407/opencv-clearpath). [Automated checks](https://github.com/Vcode2407/opencv-clearpath/actions) exercise vision/API tests on Windows and Ubuntu, save the synthetic evaluation, and build a non-root Linux container. CI does not deploy to AWS or establish physical-image accuracy.
 
-This is a functioning local research prototype, not a finished hackathon entry. OpenCV `5.0.0` is verified in Python `3.12.10`. AWS deployment and the event's compute-proposal/registration gate remain unproven. No AI provider is connected.
+This is a functioning local research prototype, not a finished hackathon entry. OpenCV `5.0.0` is verified in Python `3.12.10`. Actual AWS deployment, judge access, physical-capture evaluation, final video and entrant declarations remain pending. The organizer's [current grant form](https://www.jotform.com/form/262145877145059), checked October 11, confirms that teams without a grant proposal remain eligible for all prizes; grant applications are closed. No AI provider is connected.
 
 [Watch the 2:30 English local development demo](docs/media/clearpath-local-demo-en.mp4): real CPU inspections, recapture with no metrics, and the disclosed 1.00 m low-contrast overestimate. [Transcript and recording evidence](docs/DEMO.md) · [Judge reproduction guide](docs/JUDGING.md). The video contains owned synthetic fixtures; AWS and physical-capture evidence are still pending.
 

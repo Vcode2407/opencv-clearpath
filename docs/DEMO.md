@@ -8,6 +8,8 @@ The browser is an isolated local Chromium session at `http://127.0.0.1:4196`. Th
 
 The current MP4 is silent: its audio track has been removed while preserving the actual screen footage and English captions. Captions occupy an added footer beneath the unchanged browser viewport. No result overlays conceal the low-contrast output. The low-contrast comparison comes from the independent owned fixture manifest, not an expected answer supplied to the detector.
 
+Current eligibility clarification, checked October 11: the organizer's [linked grant form](https://www.jotform.com/form/262145877145059) confirms that teams without a proposal remain eligible for all prizes; grant applications are closed. The recorded captions, transcript and media evidence retain the eligibility wording observed at recording time. That historical wording does not indicate a current proposal blocker. Actual AWS use, judge access, physical-capture validation, final team/architecture/cloud footage and entrant declarations remain pending.
+
 ## Recorded actions
 
 The [silent-video verification](media/silent-video-verification.json) records zero audio streams, the current file hash, a complete decode, and an unchanged encoded video stream.

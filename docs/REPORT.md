@@ -1,6 +1,6 @@
 # Technical report draft — ClearPath
 
-Status: local CPU prototype validated on owned synthetic scenes; live AWS and organizer eligibility checks are pending. This draft must be updated with real capture/deployment evidence before submission.
+Status: local CPU prototype validated on owned synthetic scenes; live AWS, physical-capture validation, judge access and entrant declarations are pending. The organizer's [current grant form](https://www.jotform.com/form/262145877145059), checked October 11, confirms that teams without a proposal remain eligible for all prizes. This draft must be updated with real capture/deployment evidence before submission.
 
 ## Problem and intended users
 
@@ -46,4 +46,4 @@ The same actual OpenCV 5 pipeline is containerized for meaningful AWS CPU proces
 
 ## Remaining entry work
 
-Verify the organizer's proposal/registration requirements, deploy and record real AWS execution, add owned physical capture evaluation, finish judge access instructions, and record an English demo up to five minutes. No COOL/Graviton award, real-world accuracy or live AWS claim is currently made. [Submission checklist](HACKATHON.md).
+Deploy and record real AWS execution, add owned physical capture evaluation, finish judge access instructions, confirm entrant declarations, and record an English demo up to five minutes. The [current official linked form](https://www.jotform.com/form/262145877145059) confirms that a grant proposal is not a remaining prize-eligibility gate. No COOL/Graviton award, real-world accuracy or live AWS claim is currently made. [Submission checklist](HACKATHON.md).

@@ -1,6 +1,6 @@
 # ClearPath — English Devpost submission draft
 
-Prepared October 10, 2026. This is a working local research prototype and an unpublished draft for the OpenCV AI Competition 2026. Real CPU OpenCV 5 is verified. AWS execution and the organizer's participation/proposal gate remain unverified; this document does not claim a qualifying or submitted entry.
+Prepared October 10, 2026; grant-proposal clarification checked October 11. This is a working local research prototype and an unpublished draft for the OpenCV AI Competition 2026. Real CPU OpenCV 5 is verified. AWS execution, judge access, final materials and entrant declarations remain pending; this document does not claim a qualifying or submitted entry. The organizer's [current linked grant form](https://www.jotform.com/form/262145877145059) confirms that teams without a proposal remain eligible for all prizes.
 
 ## Project name and tagline
 
@@ -67,11 +67,11 @@ ClearPath detects image changes, not semantic obstacles. The projection assumes 
 
 The application does not certify accessibility, legal compliance, route safety, or body-width traversal. Human review cannot turn the current synthetic results into a certification. Before practical use, collect owned physical captures with measured markers, varied lighting and camera poses, repeated annotations, and held-out error analysis.
 
-The Linux image is tested locally. The entry still needs actual AWS processing evidence, judge access, and confirmation of the proposal/registration requirements. No AWS credentials, credit eligibility, deployment, or Graviton performance comparison are assumed.
+The Linux image is tested locally. The entry still needs actual AWS processing evidence, judge access, physical-capture evaluation, final video and entrant declarations. The [current grant form](https://www.jotform.com/form/262145877145059) confirms that a proposal is not required for prize eligibility; grant applications are closed. No AWS credentials, credit eligibility, deployment, or Graviton performance comparison are assumed.
 
 ## Recorded development demo and final outline
 
-The [2:30 silent, English-captioned local development video](media/clearpath-local-demo-en.mp4) shows actual CPU OpenCV 5 inspections, reviewed JSON export, recapture with no metrics, and the low-contrast 1.00 m overestimate. [Caption text and response evidence](DEMO.md), [judge reproduction guide](JUDGING.md). It uses owned synthetic fixtures and explicitly discloses AWS/eligibility as pending. The audio track has been removed; the actual screen footage and captions are unchanged.
+The [2:30 silent, English-captioned local development video](media/clearpath-local-demo-en.mp4) shows actual CPU OpenCV 5 inspections, reviewed JSON export, recapture with no metrics, and the low-contrast 1.00 m overestimate. [Caption text and response evidence](DEMO.md), [judge reproduction guide](JUDGING.md). It uses owned synthetic fixtures and retains the AWS/eligibility wording recorded at that time. The proposal clarification above supersedes that historical proposal uncertainty; actual AWS use, final materials and entrant declarations remain pending. The audio track has been removed; the actual screen footage and captions are unchanged.
 
 This is a local development clip, not the final qualifying video. The final entry still needs team introduction, architecture and genuine AWS footage, plus verified judge-accessible playback. The proposed four-minute outline below includes those additions.
 
@@ -96,9 +96,9 @@ This is a local development clip, not the final qualifying video. The final entr
 | Actual AWS workload/deployment evidence | Linux image and local server-side inspection verified; actual AWS deployment, resource identifiers, hosted inspection and judge access pending. |
 | Video, no longer than five minutes | Actual 2:30 local English development MP4, captions, transcript and evidence exist in the public source. Final team/architecture/AWS footage and verified public/unlisted playback URL remain pending. |
 | Measured results | Synthetic evaluation exists; physical-capture evaluation pending. |
-| Compute proposal / registration gate | Organizer confirmation and evidence pending. Devpost registration alone does not establish this requirement. |
+| Grant-proposal eligibility | Resolved: the [current official linked form](https://www.jotform.com/form/262145877145059) confirms teams without a proposal remain eligible for all prizes. Grant applications are closed. |
 | Special awards | None claimed; COOL/Arm and Agentic Vision eligibility unverified. |
 | Team, rights, consent, eligibility | Human verification pending. |
 | Final Devpost URL/status | Pending; no submitted entry is claimed. |
 
-Use the earlier displayed deadline for planning: **October 26, 2026, 11:45 pm PDT / October 27, 12:15 pm IST**. The organizer website says 11:59 pm Pacific, so the discrepancy needs confirmation. The website also describes an August 17 registration close and a required proposal, while Devpost's visible package differs; this participation gate remains unresolved. [Official rules](https://opencv26.devpost.com/rules), [organizer requirements](https://opencv.org/opencv-ai-competition-2026/), and [local submission gates](HACKATHON.md).
+Use the earlier displayed deadline for planning: **October 26, 2026, 11:45 pm PDT / October 27, 12:15 pm IST**. The organizer website says 11:59 pm Pacific, so the discrepancy needs confirmation. Its [current linked grant form](https://www.jotform.com/form/262145877145059), checked October 11, expressly permits prize entries without a proposal despite older required-proposal language on the organizer page. Meaningful AWS use, a working judge demonstration and entrant eligibility declarations remain required. [Official rules](https://opencv26.devpost.com/rules), [organizer requirements](https://opencv.org/opencv-ai-competition-2026/), and [local submission gates](HACKATHON.md).

@@ -110,4 +110,4 @@ The named container is left running for local review at port 4191, and Docker De
 docker stop clearpath-local-verify-20261010
 ```
 
-No AWS deployment, ECR push, CloudFormation validation, ECS service, remote endpoint, ARM/Graviton run, or physical-image evaluation was performed. Actual AWS processing, judge access, and the organizer's proposal/registration gate remain pending. The README, AWS preparation, technical report and submission draft reflect this local validation.
+No AWS deployment, ECR push, CloudFormation validation, ECS service, remote endpoint, ARM/Graviton run, or physical-image evaluation was performed. Actual AWS processing, judge access, physical validation, final video and entrant declarations remain pending. An October 11 review of the organizer's [current linked grant form](https://www.jotform.com/form/262145877145059) confirms that teams without a proposal remain eligible for all prizes; this clarification does not change the recorded container evidence. The README, AWS preparation, technical report and submission draft reflect this local validation.

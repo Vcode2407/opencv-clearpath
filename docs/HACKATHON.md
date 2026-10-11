@@ -1,6 +1,6 @@
 # OpenCV AI Competition 2026 — ClearPath preparation
 
-Official sources: [overview](https://opencv26.devpost.com/), [rules](https://opencv26.devpost.com/rules), [resources](https://opencv26.devpost.com/resources), [organizer website](https://opencv.org/opencv-ai-competition-2026/). Checked October 10, 2026.
+Official sources: [overview](https://opencv26.devpost.com/), [rules](https://opencv26.devpost.com/rules), [resources](https://opencv26.devpost.com/resources), [organizer website](https://opencv.org/opencv-ai-competition-2026/). Checked October 10, 2026; the organizer's linked [current grant form](https://www.jotform.com/form/262145877145059) was checked October 11.
 
 The Devpost header lists **October 26, 2026, 11:45 pm PDT / October 27, 12:15 pm IST**. Body text and the organizer website instead say 11:59 pm Pacific / 12:29 pm IST. Plan for the earlier time until the organizer clarifies.
 
@@ -8,7 +8,7 @@ The Devpost header lists **October 26, 2026, 11:45 pm PDT / October 27, 12:15 pm
 
 - [x] Actual OpenCV 5 substantive runtime: image validation, transformation, change detection, regions, connectivity and annotated evidence. Local runtime `5.0.0` verified.
 - [ ] Meaningful AWS workload deployed and demonstrated. Container/template preparation alone does not meet this requirement.
-- [ ] Confirm participation eligibility and compute-proposal status. The organizer website says registration closed August 17 and requires a compute-grant proposal; Devpost's visible submission requirements omit that proposal gate. Existing Devpost registration is not proof the website requirement was met.
+- [x] Grant-proposal requirement clarified: the organizer's [current linked form](https://www.jotform.com/form/262145877145059) confirms teams that did not submit a proposal remain eligible for all prizes. Grant applications are closed; a missing proposal is not a remaining entry blocker.
 - [ ] Confirm any relevant age/geography and cross-entry restrictions. Rules allow 13+ with guardian arrangements; the overview says age of majority and unspecified standard country exceptions.
 
 Build this as a distinct project. No assertion is made that an identical entry can be reused across events. Work and owned fixtures are licensed; dependency licenses remain separate. Solo development avoids conflicting published team-size limits.
