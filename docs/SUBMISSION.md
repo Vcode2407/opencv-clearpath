@@ -71,7 +71,7 @@ The Linux image is tested locally. The entry still needs actual AWS processing e
 
 ## Recorded development demo and final outline
 
-The [2:30 narrated English local development video](media/clearpath-local-demo-en.mp4) now shows actual CPU OpenCV 5 inspections, reviewed JSON export, recapture with no metrics, and the low-contrast 1.00 m overestimate. [Transcript and response evidence](DEMO.md), [judge reproduction guide](JUDGING.md). It uses owned synthetic fixtures and explicitly discloses AWS/eligibility as pending. Narration was synthesized locally with Microsoft Zira Desktop.
+The [2:30 silent, English-captioned local development video](media/clearpath-local-demo-en.mp4) shows actual CPU OpenCV 5 inspections, reviewed JSON export, recapture with no metrics, and the low-contrast 1.00 m overestimate. [Caption text and response evidence](DEMO.md), [judge reproduction guide](JUDGING.md). It uses owned synthetic fixtures and explicitly discloses AWS/eligibility as pending. The audio track has been removed; the actual screen footage and captions are unchanged.
 
 This is a local development clip, not the final qualifying video. The final entry still needs team introduction, architecture and genuine AWS footage, plus verified judge-accessible playback. The proposed four-minute outline below includes those additions.
 

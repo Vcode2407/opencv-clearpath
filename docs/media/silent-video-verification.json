@@ -1,0 +1,24 @@
+{
+  "video": "clearpath-local-demo-en.mp4",
+  "verifiedAt": "2026-10-11T07:50:59.231325+00:00",
+  "operation": "Removed all audio tracks and optional container metadata; copied the complete encoded video stream without re-encoding.",
+  "durationSeconds": 150.0,
+  "bytes": 3936898,
+  "sha256": "499b59a919ec3b1bd6ecac771f04ccd98ddf177cf341cf7fa2a64202630ffe71",
+  "audioStreamCount": 0,
+  "streamTypes": [
+    "video"
+  ],
+  "videoCodec": "h264",
+  "videoWidth": 1600,
+  "videoHeight": 1020,
+  "videoPacketCount": 3750,
+  "videoPayloadSha256": "8896a6eba8ae57410f028b7b6cb7497484fd3335d8e2527221ff69dd98377599",
+  "codecConfigurationSha256": "11ed5ab54aed1d0913d3e69b099ecd9fb12ded2d2ad67fa01e424b43d0d6e88e",
+  "originalFileSha256": "00442045d23b33a6d796009d099af56e22e90298dcdd548b21623964fe646077",
+  "originalVideoDurationSeconds": 150.0,
+  "encodedVideoUnchanged": true,
+  "removedAudioOnlyTailSeconds": 0,
+  "fullVideoDecodePassed": true,
+  "disclosure": "Actual application footage, captions and provider-status labels are unchanged. This edit does not change software authoring, integration provenance, or submission readiness."
+}

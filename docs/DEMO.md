@@ -1,14 +1,16 @@
 # ClearPath local development recording
 
-[Play/download the English MP4](media/clearpath-local-demo-en.mp4) · [Captions](media/clearpath-local-demo-en.srt) · [Actual response evidence](media/clearpath-recording-evidence.json) · [Judge reproduction guide](JUDGING.md)
+[Play/download the silent English-captioned MP4](media/clearpath-local-demo-en.mp4) · [Captions](media/clearpath-local-demo-en.srt) · [Actual response evidence](media/clearpath-recording-evidence.json) · [Judge reproduction guide](JUDGING.md)
 
 This **2 minute 30 second** recording demonstrates the working local application, not a complete qualifying final submission. It uses the actual Python CPU OpenCV **5.0.0** pipeline and three owned synthetic fixtures. No AWS runtime, language model, paid service, external account or physical-capture result is depicted.
 
 The browser is an isolated local Chromium session at `http://127.0.0.1:4196`. The recording drives the real controls and captures actual `/health` and `/api/inspect` responses; it does not substitute response stubs or draw invented application results. The same source is available at [Vcode2407/opencv-clearpath](https://github.com/Vcode2407/opencv-clearpath). A previously completed [Linux container verification](CONTAINER_VERIFICATION.md) is separate evidence, not part of the browser recording.
 
-English narration was synthesized locally with the installed **Microsoft Zira Desktop** voice. Captions occupy an added footer beneath the unchanged browser viewport. No result overlays conceal the low-contrast output. The low-contrast comparison comes from the independent owned fixture manifest, not an expected answer supplied to the detector.
+The current MP4 is silent: its audio track has been removed while preserving the actual screen footage and English captions. Captions occupy an added footer beneath the unchanged browser viewport. No result overlays conceal the low-contrast output. The low-contrast comparison comes from the independent owned fixture manifest, not an expected answer supplied to the detector.
 
 ## Recorded actions
+
+The [silent-video verification](media/silent-video-verification.json) records zero audio streams, the current file hash, a complete decode, and an unchanged encoded video stream.
 
 | Time | Real action and visible evidence |
 | --- | --- |
@@ -33,7 +35,7 @@ Inspection actions can take a fraction of a second after the scheduled boundary.
 
 The tool detects changes, not semantic obstacles. Planar projection, lighting, alignment, shadows, reflections and low contrast limit it. Human review does not certify accessibility, safety or body-width traversal. The included failure is evidence of this limitation, not a claimed robustness result.
 
-## English transcript
+## English caption text
 
 **0:00–0:14** — ClearPath compares a scene with an aligned empty reference. This is a local development recording of real CPU OpenCV five, using owned synthetic fixtures. AWS deployment and eligibility remain pending.
 
