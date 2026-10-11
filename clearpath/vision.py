@@ -31,7 +31,7 @@ class Calibration:
             width = float(raw["width_m"])
             length = float(raw["length_m"])
             target = float(raw.get("review_width_m", 1.2))
-        except (KeyError, TypeError, ValueError) as exc:
+        except (KeyError, TypeError, ValueError, OverflowError) as exc:
             raise ValueError("Supply four floor corners, measured width and length in metres.") from exc
         if points.shape != (4, 2) or not np.isfinite(points).all():
             raise ValueError("Calibration needs exactly four finite [x, y] image coordinates.")
@@ -183,17 +183,20 @@ def inspect(scene: np.ndarray, reference: np.ndarray, cal: Calibration) -> tuple
     focus = float(cv2.Laplacian(gray, cv2.CV_64F)[roi].var())
     ref_focus = float(cv2.Laplacian(ref_gray, cv2.CV_64F)[roi].var())
     clipping = float(np.mean((gray[roi] >= 250) | (gray[roi] <= 5)))
+    ref_clipping = float(np.mean((ref_gray[roi] >= 250) | (ref_gray[roi] <= 5)))
     outside = floor_mask == 0
     outside_delta = float(np.mean(cv2.absdiff(scene, reference)[outside])) if outside.any() else 0.0
     shift, registration_response = cv2.phaseCorrelate(ref_gray.astype(np.float32), gray.astype(np.float32))
     report["quality"] = {"focus_variance": round(focus, 2), "reference_focus_variance": round(ref_focus, 2),
-                          "clipped_fraction": round(clipping, 4), "outside_difference": round(outside_delta, 2),
+                          "clipped_fraction": round(clipping, 4),
+                          "reference_clipped_fraction": round(ref_clipping, 4),
+                          "outside_difference": round(outside_delta, 2),
                           "registration_shift_px": [round(v, 2) for v in shift],
                           "registration_response": round(registration_response, 4)}
     if min(focus, ref_focus) < 45:
         report["capture_requests"].append("Retake the scene and empty reference in focus; keep the same camera position.")
-    if clipping > 0.22:
-        report["capture_requests"].append("Retake from an angle without glare or deep shadow; keep the reference aligned.")
+    if max(clipping, ref_clipping) > 0.22:
+        report["capture_requests"].append("Retake the scene and empty reference without glare or deep shadow; keep the pair aligned.")
     if outside_delta > 18 or (registration_response > 0.2 and np.linalg.norm(shift) > 3):
         report["capture_requests"].append("The background changed. Restore the original camera pose and lighting, then capture a new aligned pair.")
     report["trace"].append({"step": "check_capture_quality", "outcome": "retry" if report["capture_requests"] else "accepted"})

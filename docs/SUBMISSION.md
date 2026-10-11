@@ -45,7 +45,7 @@ The stored evaluation covers **nine deterministic owned synthetic fixtures**, ge
 | Blur, glare, moved camera, tiny calibration | Specific recapture requests; measurements withheld. | Tested quality/geometry decisions change the next action. |
 | Low-contrast object | Missed object; IoU 0.0; true span 1.40 m, reported 2.40 m. | A substantive **1.00 m overestimate** that remains visible in the evaluation. |
 
-The evaluation's nine expected workflow statuses do not mean nine accurate measurements. The low-contrast case is a failure even though its expected status is `review_required`. The README records 29 passing vision/API tests, a passing JavaScript syntax check, and a passing dependency check. See [evaluation JSON](../reports/evaluation.json) and the [technical report](REPORT.md).
+The evaluation's nine expected workflow statuses do not mean nine accurate measurements. The low-contrast case is a failure even though its expected status is `review_required`. The README records 31 passing vision/API tests, a passing JavaScript syntax check, and a passing dependency check. The added regressions reject glare in the empty reference without false measurements and return an actionable error for overflowing calibration numbers. See [evaluation JSON](../reports/evaluation.json) and the [technical report](REPORT.md).
 
 ## Development challenges
 

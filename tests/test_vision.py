@@ -52,6 +52,20 @@ def test_full_width_obstruction_has_no_connected_point_route():
     assert inspect_fixture("pinch")[0]["measurements"]["point_route_exists"] is True
 
 
+def test_glare_in_empty_reference_requires_recapture_without_false_obstacles():
+    fixture = fixture_by_id("clear")
+    scene = cv2.imread(str(FIXTURES / fixture["image"]))
+    # A poor empty reference can produce an apparent obstruction in a clear scene.
+    reference = cv2.imread(str(FIXTURES / "glare.png"))
+    report, mask = inspect(scene, reference, Calibration.from_dict(fixture["calibration"]))
+    assert report["status"] == "needs_capture"
+    assert report["quality"]["clipped_fraction"] == 0
+    assert report["quality"]["reference_clipped_fraction"] > 0.22
+    assert any("reference" in request for request in report["capture_requests"])
+    assert report["measurements"] is None
+    assert mask is None
+
+
 def test_known_low_contrast_failure_is_exposed_in_evaluation():
     assessment = evaluate()
     case = next(case for case in assessment["cases"] if case["fixture"] == "low_contrast")

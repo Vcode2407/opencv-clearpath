@@ -61,7 +61,7 @@ python -m clearpath evaluate --output reports/judge-evaluation.json
 
 These CLI inspections execute the same pipeline as the Flask API. The evaluation includes all nine scenes, not just the four ideal ones. See [stored evaluation](../reports/evaluation.json) and [technical report](REPORT.md). Nine expected statuses do not mean nine accurate measurements: low contrast has IoU **0.0** and a **1.00 m** span error.
 
-The [GitHub workflow](../.github/workflows/verify.yml) runs the 29 vision/API tests, JavaScript syntax and dependency checks, actual runtime verification, and evaluation on Windows and Ubuntu. A separate job builds the Linux image, checks UID 10001, dependencies and OpenCV runtime. These checks are local/CI evidence; they do not establish an AWS location.
+The [GitHub workflow](../.github/workflows/verify.yml) runs the 31 vision/API tests, JavaScript syntax and dependency checks, actual runtime verification, and evaluation on Windows and Ubuntu. The tests include a clear scene with the glare fixture used as its empty reference: it must request recapture with no measurements, rather than label the reference glare as an obstacle. An oversized numeric calibration must return HTTP 400 and an actionable JSON error. A separate job builds the Linux image, checks UID 10001, dependencies and OpenCV runtime. These checks are local/CI evidence; they do not establish an AWS location.
 
 ## Container evidence and remaining gates
 

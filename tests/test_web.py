@@ -38,6 +38,19 @@ def test_registered_image_pair_upload_is_analyzed(client):
     assert response.json["measurements"]["clearance_m"] == pytest.approx(1.8, abs=0.04)
 
 
+def test_oversized_numeric_calibration_returns_actionable_json_error(client):
+    fixture = fixture_by_id("clear")
+    calibration = {**fixture["calibration"], "width_m": 10 ** 1000}
+    response = client.post("/api/inspect", data={
+        "scene": (io.BytesIO((FIXTURES / fixture["image"]).read_bytes()), "scene.png"),
+        "reference": (io.BytesIO((FIXTURES / fixture["reference"]).read_bytes()), "reference.png"),
+        "calibration": json.dumps(calibration),
+    })
+    assert response.status_code == 400
+    assert response.is_json
+    assert "measured width" in response.json["error"]
+
+
 @pytest.mark.parametrize("body", [{"fixture": "../README.md"}, {"fixture": "clear", "review_width_m": "bad"}, [], {}])
 def test_bad_inputs_are_actionable_json_errors(client, body):
     response = client.post("/api/inspect", json=body)

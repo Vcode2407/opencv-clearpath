@@ -29,7 +29,7 @@ Inspection actions can take a fraction of a second after the scheduled boundary.
 ## Verification and limits
 
 - The complete isolated-browser workflow passed assertions for runtime, response status, pinch measurements, reviewed export, recapture requests, absent retry metrics, and the low-contrast error.
-- The current 29 vision/API tests passed locally. [CI](https://github.com/Vcode2407/opencv-clearpath/actions) separately verifies Windows, Ubuntu and the non-root Linux container; those are not AWS deployments.
+- At recording time, 29 vision/API tests passed locally. [CI](https://github.com/Vcode2407/opencv-clearpath/actions) separately verifies Windows, Ubuntu and the non-root Linux container; those are not AWS deployments.
 - The final MP4 is decoded in full with FFmpeg, and keyframes are visually checked for readable captions and genuine outputs. [Media manifest](media/manifest.json) records format, duration, SHA-256 and verification results.
 - This clip does not supply final team introduction, AWS architecture/runtime footage, cloud judge access, physical-capture validation or eligibility confirmation. Those final materials remain pending under [submission gates](HACKATHON.md).
 

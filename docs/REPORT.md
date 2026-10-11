@@ -8,7 +8,7 @@ Operators documenting temporary walkway obstructions need measurable evidence an
 
 ## Method
 
-An operator supplies an empty reference, a scene captured from the same position, clockwise floor corners and physical dimensions. OpenCV validates a convex, adequately visible calibration rectangle. Laplacian focus variance, clipped-pixel fraction, background difference and phase correlation flag unreliable captures. A failure returns a specific recapture request and no measurement.
+An operator supplies an empty reference, a scene captured from the same position, clockwise floor corners and physical dimensions. OpenCV validates a convex, adequately visible calibration rectangle. Laplacian focus variance, separate clipped-pixel fractions for the scene and empty reference, background difference and phase correlation flag unreliable captures. More than 22% clipped floor pixels in either image requests recapture; reference glare must not become a measured obstruction in an otherwise clear scene. A failure returns a specific recapture request and no measurement. Invalid calibration numbers, including conversion overflow, produce an actionable HTTP 400 JSON error in the API.
 
 Accepted images are rectified with `getPerspectiveTransform` and `warpPerspective` at a nominal 100 pixels per metre. `absdiff` detects changed pixels above a 35-level channel threshold. Morphological opening/closing reduces noise; connected-component analysis removes regions smaller than 0.004 m² and reports projected areas/bounds. For each row, the algorithm finds free intervals. The smallest row-wise widest free interval is the reported span. Connected-component analysis separately tests whether a point-sized free component links the near and far boundaries. That connectivity is not a body-width traversal result.
 
@@ -32,7 +32,7 @@ Nine deterministic, owned synthetic fixtures use a known 2.4 × 6.0 m plane proj
 | Tiny calibration | Better angle requested; no measurement | Geometry gate |
 | Low-contrast object | **Missed object; span overestimated by 1.00 m** | IoU 0.0; true span 1.40 m, reported 2.40 m |
 
-All nine cases meet their explicitly defined status expectations; that statistic counts workflow decisions and **does not mean nine accurate measurements**. The missed low-contrast case remains a substantive failure. 29 automated tests cover fixture measurements, recapture decisions, input validation, image limits, upload API, path restrictions, local-origin checks and cloud-token enforcement. Browser visual QA is tracked separately.
+All nine cases meet their explicitly defined status expectations; that statistic counts workflow decisions and **does not mean nine accurate measurements**. The missed low-contrast case remains a substantive failure. 31 automated tests cover fixture measurements, recapture decisions (including glare in the empty reference), input validation and calibration overflow, image limits, upload API, path restrictions, local-origin checks and cloud-token enforcement. Browser visual QA is tracked separately.
 
 ## Limitations and responsible use
 

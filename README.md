@@ -48,9 +48,11 @@ CLI image-pair inspection:
 
 `calibration.json` has `points` (four `[x,y]` coordinates in far-left, far-right, near-right, near-left order), `width_m`, `length_m`, and optional `review_width_m`. [Example calibration](docs/example-calibration.json) matches the owned 900 × 700 fixture images; replace the coordinates/dimensions for another photograph.
 
+Both images must pass the quality checks. Glare or deep-shadow clipping in the empty reference can create false changed regions even when the scene is clear; `quality.reference_clipped_fraction` records that check. Excessive clipping in either image requests recapture and withholds measurements. Invalid calibration values, including numbers too large to convert, return an actionable JSON error with HTTP 400.
+
 ## Evidence and boundaries
 
-29 vision/API tests passed, JavaScript syntax passed, and `pip check` passed. The recorded isolated-browser workflow also verifies actual API responses, reviewed JSON download, recapture with hidden metrics, and the retained low-contrast failure; [evidence](docs/media/clearpath-recording-evidence.json). [Evaluation](reports/evaluation.json) includes all nine owned synthetic fixtures and the low-contrast failure. Four normal planar fixtures yield mask IoU `1.0` and clearance mean absolute error `0.00 m`; these controlled round-trip fixtures **do not establish real-world accuracy**.
+31 vision/API tests passed, JavaScript syntax passed, and `pip check` passed. The recorded isolated-browser workflow also verifies actual API responses, reviewed JSON download, recapture with hidden metrics, and the retained low-contrast failure; [evidence](docs/media/clearpath-recording-evidence.json). The recording retains its original source/test-count evidence. [Evaluation](reports/evaluation.json) includes all nine owned synthetic fixtures and the low-contrast failure. Four normal planar fixtures yield mask IoU `1.0` and clearance mean absolute error `0.00 m`; these controlled round-trip fixtures **do not establish real-world accuracy**.
 
 The measured span is the minimum, over floor rows, of each row's widest free segment. It does not guarantee a continuous route for a person, wheelchair, or vehicle. Changed-region projections are approximate footprints only for flat/contact regions; raised objects, shadows, reflections, unknown camera changes and similar colours can mislead the detector. The nominal raster is 1 cm, not a claim of 1 cm accuracy. This application does not certify accessibility, legal compliance or safety.
 
