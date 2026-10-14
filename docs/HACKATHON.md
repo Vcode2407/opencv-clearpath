@@ -16,6 +16,7 @@ Build this as a distinct project. No assertion is made that an identical entry c
 ## Submission assets
 
 - [x] Working local CPU application, browser, API and CLI.
+- [x] Additional private Lambda adapter: ten actual local official-base emulator fixture/refusal calls, guarded immutable-version evidence collection and offline template review. [Verification](LAMBDA.md). This remains local preparation; the actual AWS qualification gate above is unchecked.
 - [x] Pinned dependencies, run/test instructions, owned fixture labels and automated evaluation.
 - [x] Draft technical report and architecture diagram, with failures and responsible-use limitations.
 - [x] Judge-accessible MIT repository: https://github.com/Vcode2407/opencv-clearpath. Public source is not mandatory for this event.

@@ -1,0 +1,36 @@
+{
+  "checkedAtUtc": "2026-10-14T09:29:22.047338+00:00",
+  "kind": "offline CloudFormation bundled-schema preflight",
+  "validator": "cfn-lint",
+  "validatorVersion": "1.57.2",
+  "template": "infra/lambda.yaml",
+  "templateSha256": "b7de712666b47a49003ac4074fc8195402779a0cda4d737a986c9b12d47c2af8",
+  "regions": [
+    "us-east-1",
+    "ap-south-1"
+  ],
+  "strictPropertyTypeCheck": true,
+  "enabledSeverities": [
+    "error",
+    "warning",
+    "informational"
+  ],
+  "exitCode": 0,
+  "blockedNetworkAttempts": 0,
+  "networkBlocked": true,
+  "awsAccountCalls": false,
+  "awsDeploymentVerified": false,
+  "findingCountsByLevel": {
+    "Error": 0,
+    "Warning": 0,
+    "Informational": 0
+  },
+  "findings": [],
+  "stderr": "",
+  "limitations": "Bundled-schema validation only; no AWS authorization, quotas, ECR image, regional service, deployment or invocation was checked.",
+  "primarySources": [
+    "https://github.com/aws-cloudformation/cfn-lint",
+    "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-lambda-function.html",
+    "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-lambda-version.html"
+  ]
+}

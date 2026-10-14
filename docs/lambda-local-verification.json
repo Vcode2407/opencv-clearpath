@@ -1,0 +1,351 @@
+{
+  "checkedAtUtc": "2026-10-14T09:27:36.806647+00:00",
+  "kind": "actual local Docker AWS Python base Runtime Interface Emulator verification",
+  "awsAccountCalls": false,
+  "awsDeploymentVerified": false,
+  "awsExecutionVerified": false,
+  "baseImage": "public.ecr.aws/lambda/python:3.12@sha256:4b4d6db40cb5fb98fef32bdbe534d6ca52982824314ed7d1fec3ac0d8c9dba4b",
+  "dockerServer": {
+    "Platform": {
+      "Name": "Docker Desktop 4.93.0 (240920)"
+    },
+    "Version": "29.8.1",
+    "ApiVersion": "1.56",
+    "MinAPIVersion": "1.40",
+    "Os": "linux",
+    "Arch": "amd64",
+    "Components": [
+      {
+        "Name": "Engine",
+        "Version": "29.8.1",
+        "Details": {
+          "ApiVersion": "1.56",
+          "Arch": "amd64",
+          "BuildTime": "Tue Sep 15 16:25:38 2026",
+          "Experimental": "false",
+          "GitCommit": "464cd50",
+          "GoVersion": "go1.26.8",
+          "KernelVersion": "6.6.114.1-microsoft-standard-WSL2",
+          "MinAPIVersion": "1.40",
+          "Module": "github.com/moby/moby/v2",
+          "ModuleVersion": "v2.0.0+unknown",
+          "Os": "linux"
+        }
+      },
+      {
+        "Name": "containerd",
+        "Version": "v2.3.5",
+        "Details": {
+          "GitCommit": "1294c24a7da8e5a793ed378161673abe94118892"
+        }
+      },
+      {
+        "Name": "runc",
+        "Version": "1.5.1",
+        "Details": {
+          "GitCommit": "v1.5.1-0-g8f2685a4"
+        }
+      },
+      {
+        "Name": "docker-init",
+        "Version": "0.19.0",
+        "Details": {
+          "GitCommit": "de40ad0"
+        }
+      }
+    ],
+    "GitCommit": "464cd50",
+    "GoVersion": "go1.26.8",
+    "KernelVersion": "6.6.114.1-microsoft-standard-WSL2",
+    "BuildTime": "2026-09-15T16:25:38.000000000+00:00"
+  },
+  "builtImageId": "sha256:196f033e90591906e5ec4cf508c8c3d8e5fdaafc50da53dcc7325d07dd3bf3f5",
+  "os": "linux",
+  "architecture": "amd64",
+  "localImageManifestSha256": "196f033e90591906e5ec4cf508c8c3d8e5fdaafc50da53dcc7325d07dd3bf3f5",
+  "localImageConfigSha256": "3c521b764e282f8fc9f27aa1cc321ffe53ac7ea27d756204af50441c2fe64486",
+  "buildProvenance": false,
+  "ecrUploadPerformed": false,
+  "runtimeUser": "10001:10001",
+  "readOnlyRootfs": true,
+  "tmpfs": {
+    "/tmp": "rw,noexec,nosuid,size=64m"
+  },
+  "bindMounts": null,
+  "memoryLimitBytes": 2147483648,
+  "nanoCpus": 1000000000,
+  "publishedPorts": {
+    "8080/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "4197"
+      }
+    ]
+  },
+  "visionSourceSha256": "9b7b29a7eb13683cf9791ea50d4f969b89f012d328c07ec993c4319eb3802d6c",
+  "visionSourceHashNormalization": "crlf_to_lf",
+  "inputSha256": {
+    "Dockerfile.lambda": "0c716b3c7d9a1fff2479595ff5102c781b5675534da02c8ae58918d1ad6fb193",
+    "requirements-lambda.txt": "f50c42c2b2ab483316dd3aa29026d927a660d41ed0cbd74536f95b864264e759",
+    "clearpath/lambda_runtime.py": "c15910e92701447cb4b38171cbb94c27a9170d1b6f4c9c846a80750762145012",
+    "clearpath/vision.py": "9b7b29a7eb13683cf9791ea50d4f969b89f012d328c07ec993c4319eb3802d6c",
+    "fixtures/manifest.json": "21b8ace6c750fade009196268726290e05f5ce96a3ba659ca5d22a888c27b144",
+    "clearpath/lambda_evidence.py": "49e16731d9943979aa5ce8df0555d58cdb5396587ca49a294f06bc67a79fe9ea"
+  },
+  "checkCount": 10,
+  "checks": [
+    {
+      "kind": "owned_fixture",
+      "fixture": "pinch",
+      "httpStatus": 200,
+      "status": "review_required",
+      "measurements": {
+        "clearance_m": 0.75,
+        "bottleneck_y_m": 2.1,
+        "bottleneck_span_px": [
+          75,
+          150
+        ],
+        "bottleneck_row_px": 210,
+        "point_route_exists": true,
+        "changed_area_m2": 1.65,
+        "obstacle_count": 2,
+        "obstacles": [
+          {
+            "id": 1,
+            "area_m2": 0.75,
+            "bounds_m": [
+              0.0,
+              2.1,
+              0.75,
+              1.0
+            ]
+          },
+          {
+            "id": 2,
+            "area_m2": 0.9,
+            "bounds_m": [
+              1.5,
+              2.1,
+              0.9,
+              1.0
+            ]
+          }
+        ],
+        "review_width_m": 1.2,
+        "below_review_target": true
+      },
+      "captureRequests": [],
+      "runtime": {
+        "opencv_version": "5.0.0",
+        "opencv5_verified": true,
+        "compute": "CPU",
+        "ai_provider": "none",
+        "aws_deployment_verified": false
+      },
+      "awsExecutionVerified": false,
+      "responseSha256": "c3a0c52c7599a45e472938f554fcdc5f40c9af90448af11523fc1c50a7fcaf93"
+    },
+    {
+      "kind": "owned_fixture",
+      "fixture": "edge_boxes",
+      "httpStatus": 200,
+      "status": "review_required",
+      "measurements": {
+        "clearance_m": 1.8,
+        "bottleneck_y_m": 3.9,
+        "bottleneck_span_px": [
+          0,
+          180
+        ],
+        "bottleneck_row_px": 390,
+        "point_route_exists": true,
+        "changed_area_m2": 0.89,
+        "obstacle_count": 2,
+        "obstacles": [
+          {
+            "id": 1,
+            "area_m2": 0.44,
+            "bounds_m": [
+              0.0,
+              2.0,
+              0.55,
+              0.8
+            ]
+          },
+          {
+            "id": 2,
+            "area_m2": 0.45,
+            "bounds_m": [
+              1.8,
+              3.9,
+              0.6,
+              0.75
+            ]
+          }
+        ],
+        "review_width_m": 1.2,
+        "below_review_target": false
+      },
+      "captureRequests": [],
+      "runtime": {
+        "opencv_version": "5.0.0",
+        "opencv5_verified": true,
+        "compute": "CPU",
+        "ai_provider": "none",
+        "aws_deployment_verified": false
+      },
+      "awsExecutionVerified": false,
+      "responseSha256": "7440ffbc7bbde94e563448d19d86d7dd3cb5217b27e9ec169c2ef7a4c1bc7984"
+    },
+    {
+      "kind": "owned_fixture",
+      "fixture": "blur",
+      "httpStatus": 200,
+      "status": "needs_capture",
+      "measurements": null,
+      "captureRequests": [
+        "Retake the scene and empty reference in focus; keep the same camera position."
+      ],
+      "runtime": {
+        "opencv_version": "5.0.0",
+        "opencv5_verified": true,
+        "compute": "CPU",
+        "ai_provider": "none",
+        "aws_deployment_verified": false
+      },
+      "awsExecutionVerified": false,
+      "responseSha256": "fa189f1bf835f8cf0341b2c1981f520e56ca85a072ee9fbeb581be641d75b3b6"
+    },
+    {
+      "kind": "owned_fixture",
+      "fixture": "glare",
+      "httpStatus": 200,
+      "status": "needs_capture",
+      "measurements": null,
+      "captureRequests": [
+        "Retake the scene and empty reference without glare or deep shadow; keep the pair aligned."
+      ],
+      "runtime": {
+        "opencv_version": "5.0.0",
+        "opencv5_verified": true,
+        "compute": "CPU",
+        "ai_provider": "none",
+        "aws_deployment_verified": false
+      },
+      "awsExecutionVerified": false,
+      "responseSha256": "c28a8883071558450d831dd3728702da78ff5d83d0fe9df75e1ffecbbff2cb41"
+    },
+    {
+      "kind": "owned_fixture",
+      "fixture": "shifted",
+      "httpStatus": 200,
+      "status": "needs_capture",
+      "measurements": null,
+      "captureRequests": [
+        "The background changed. Restore the original camera pose and lighting, then capture a new aligned pair."
+      ],
+      "runtime": {
+        "opencv_version": "5.0.0",
+        "opencv5_verified": true,
+        "compute": "CPU",
+        "ai_provider": "none",
+        "aws_deployment_verified": false
+      },
+      "awsExecutionVerified": false,
+      "responseSha256": "0526304a3ac8ceb254d5cdb04fab0006f837f29fc738bfc6cd1e26addc1dfcf9"
+    },
+    {
+      "kind": "owned_fixture",
+      "fixture": "low_contrast",
+      "httpStatus": 200,
+      "status": "review_required",
+      "measurements": {
+        "clearance_m": 2.4,
+        "bottleneck_y_m": 0.0,
+        "bottleneck_span_px": [
+          0,
+          240
+        ],
+        "bottleneck_row_px": 0,
+        "point_route_exists": true,
+        "changed_area_m2": 0.0,
+        "obstacle_count": 0,
+        "obstacles": [],
+        "review_width_m": 1.2,
+        "below_review_target": false
+      },
+      "captureRequests": [],
+      "runtime": {
+        "opencv_version": "5.0.0",
+        "opencv5_verified": true,
+        "compute": "CPU",
+        "ai_provider": "none",
+        "aws_deployment_verified": false
+      },
+      "awsExecutionVerified": false,
+      "responseSha256": "a0df4657d0c7278eb7a328d50e4e1941ef8f624711afc0125420464b2875e291"
+    },
+    {
+      "kind": "refusal",
+      "case": "remote-url-refused",
+      "httpStatus": 200,
+      "errorType": "ValueError",
+      "errorMessage": "Image-pair events require scene_base64, reference_base64 and calibration only.",
+      "awsExecutionVerified": false
+    },
+    {
+      "kind": "refusal",
+      "case": "data-url-refused",
+      "httpStatus": 200,
+      "errorType": "ValueError",
+      "errorMessage": "Each image must use valid plain base64, without a data URL.",
+      "awsExecutionVerified": false
+    },
+    {
+      "kind": "refusal",
+      "case": "pixel-bomb-refused",
+      "httpStatus": 200,
+      "errorType": "ValueError",
+      "errorMessage": "Resize the image to at most 8 megapixels before inspecting.",
+      "awsExecutionVerified": false
+    },
+    {
+      "kind": "refusal",
+      "case": "event-size-refused",
+      "httpStatus": 200,
+      "errorType": "ValueError",
+      "errorMessage": "The synchronous inspection event exceeds 5.6 MB.",
+      "awsExecutionVerified": false
+    }
+  ],
+  "limitations": "Local emulation does not reproduce AWS IAM, quotas, billing, network, service isolation or a deployed function. Context identifiers from RIE do not establish AWS execution. Owned fixtures are synthetic; the 1.00 m low-contrast failure is retained. No judge access or final AWS demo is claimed.",
+  "localNativeChecks": {
+    "pythonVersion": "3.12.10",
+    "testCount": 66,
+    "existingVisionApiCount": 31,
+    "lambdaCount": 35,
+    "elapsedSeconds": 16.4,
+    "pytestOutputSha256": "b8c0e7c01172bad64ff99c36b3a4994c7b61d4b24970d66e4e4e122f67e11b7b",
+    "pytestOutputLastWriteUtc": "2026-10-14T09:22:52.026474+00:00",
+    "javascriptSyntaxPassed": true,
+    "pipCheckPassed": true,
+    "command": ".venv/Scripts/python.exe -m pytest -q",
+    "cloudTransportInUnitTests": "injected local test transport only; not remote AWS evidence"
+  },
+  "containerPipCheckPassed": true,
+  "containerPipCheckQualification": "pip emitted an unwritable cache-directory warning under UID10001/read-only root; dependency check succeeded.",
+  "preparationCliCheck": {
+    "outcome": "prepared_only",
+    "invocationAttempted": false,
+    "awsExecutionVerified": false,
+    "qualification": "Actual local CLI run with conventional illustrative account/image/profile values, not an owner account or deployment target. No AWS CLI subprocess was launched."
+  },
+  "verificationContainerStoppedAfterChecks": true,
+  "buildCommand": "docker build --platform linux/amd64 --provenance=false -f Dockerfile.lambda -t clearpath-lambda:final-local-20261014 .",
+  "primarySources": [
+    "https://docs.aws.amazon.com/lambda/latest/dg/python-image.html",
+    "https://github.com/aws/aws-lambda-runtime-interface-emulator",
+    "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html"
+  ]
+}

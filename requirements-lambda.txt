@@ -1,0 +1,3 @@
+# The same pinned CPU vision dependencies; no web server or cloud SDK is needed.
+opencv-python-headless==5.0.0.93
+numpy==2.3.5

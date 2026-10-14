@@ -1,6 +1,8 @@
 # AWS deployment preparation — not executed
 
-The intended meaningful AWS component is the **actual OpenCV CPU inspection** on ECS Express Mode/Fargate. Hosting only static screenshots would not establish that component. No AWS calls or deployment were performed during this build, and no credentials are stored in the project.
+The intended meaningful AWS component is the **actual OpenCV CPU inspection**. Two routes are prepared: a private synchronous Lambda function for an initial explicitly reviewed inspection, and ECS Express Mode/Fargate for browser hosting. Hosting only static screenshots would not establish that component. No AWS account calls or deployment were performed during this build, and no credentials are stored in the project.
+
+The [Lambda preparation and actual local emulator verification](LAMBDA.md) were completed October 14. It avoids a web gateway for the first inspection, uses an immutable image/version and logging-only role, and keeps cloud execution false until a separately captured remote result exists. Its template passed blocked-network offline schema review with zero findings. Private IAM Invoke does not provide a public judge endpoint; judge access still needs a separate arrangement. The ECS route and its prior verification below are preserved.
 
 `Dockerfile` uses Linux Python 3.12 and a pinned OpenCV 5 headless wheel. `infra/ecs-express.yaml` provisions the Express service, task execution/infrastructure roles and a generated Secrets Manager bearer token. It sets port 4181, 1 vCPU/2 GB and one task. The API requires that token in cloud mode; the local CLI remains loopback-only. The template assumes a supported region with a default VPC/public subnets, an accessible ECR image and permissions for ECS, IAM, Secrets Manager and provisioned networking. Confirm these in the account before applying it.
 

@@ -1,0 +1,83 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Prepared private ClearPath OpenCV Lambda inspection; not deployed.
+Parameters:
+  FunctionName:
+    Type: String
+    Default: clearpath-inspect
+    AllowedPattern: '[A-Za-z0-9_-]{1,64}'
+  ImageUri:
+    Type: String
+    MaxLength: 256
+    Description: Reviewed Linux amd64 image digest in same-region private ECR.
+    AllowedPattern: '[0-9]{12}\.dkr\.ecr\.[a-z]{2}-[a-z]+-[1-9][0-9]*\.amazonaws\.com/[a-z0-9./_-]+@sha256:[a-f0-9]{64}'
+  ReservedConcurrency:
+    Type: Number
+    Default: -1
+    AllowedValues: [-1, 1]
+    Description: -1 omits the property. Choose 1 only after reviewing account quotas.
+Conditions:
+  HasReservedConcurrency: !Equals [!Ref ReservedConcurrency, 1]
+Resources:
+  InspectionLogs:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${FunctionName}
+      RetentionInDays: 7
+  InspectionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: InspectionLogsOnly
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: !Sub arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/${FunctionName}:log-stream:*
+  InspectionFunction:
+    Type: AWS::Lambda::Function
+    DependsOn: InspectionLogs
+    Properties:
+      FunctionName: !Ref FunctionName
+      PackageType: Image
+      Code:
+        ImageUri: !Ref ImageUri
+      ImageConfig:
+        Command: [clearpath.lambda_runtime.handler]
+      Architectures: [x86_64]
+      Role: !GetAtt InspectionRole.Arn
+      MemorySize: 2048
+      Timeout: 60
+      EphemeralStorage:
+        Size: 512
+      ReservedConcurrentExecutions: !If [HasReservedConcurrency, !Ref ReservedConcurrency, !Ref 'AWS::NoValue']
+  InspectionVersion:
+    Type: AWS::Lambda::Version
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      FunctionName: !Ref InspectionFunction
+      # A different immutable image requires a newly published version.
+      Description: !Ref ImageUri
+Outputs:
+  FunctionArn:
+    Value: !GetAtt InspectionFunction.Arn
+    Description: Private IAM Invoke target. No web endpoint is created.
+  QualifiedFunctionArn:
+    Value: !Ref InspectionVersion
+    Description: Invoke this immutable version after owner review.
+  Version:
+    Value: !GetAtt InspectionVersion.Version
+  LogGroup:
+    Value: !Ref InspectionLogs

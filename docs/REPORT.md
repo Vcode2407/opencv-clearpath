@@ -32,7 +32,7 @@ Nine deterministic, owned synthetic fixtures use a known 2.4 × 6.0 m plane proj
 | Tiny calibration | Better angle requested; no measurement | Geometry gate |
 | Low-contrast object | **Missed object; span overestimated by 1.00 m** | IoU 0.0; true span 1.40 m, reported 2.40 m |
 
-All nine cases meet their explicitly defined status expectations; that statistic counts workflow decisions and **does not mean nine accurate measurements**. The missed low-contrast case remains a substantive failure. 31 automated tests cover fixture measurements, recapture decisions (including glare in the empty reference), input validation and calibration overflow, image limits, upload API, path restrictions, local-origin checks and cloud-token enforcement. Browser visual QA is tracked separately.
+All nine cases meet their explicitly defined status expectations; that statistic counts workflow decisions and **does not mean nine accurate measurements**. The missed low-contrast case remains a substantive failure. The original 31 automated tests cover fixture measurements, recapture decisions (including glare in the empty reference), input validation and calibration overflow, image limits, upload API, path restrictions, local-origin checks and cloud-token enforcement. An additional 35 Lambda boundary, receipt and single-attempt tests bring the locally passing suite to 66 as of October 14. Injected transport tests are not AWS evidence. Browser visual QA is tracked separately.
 
 ## Limitations and responsible use
 
@@ -43,6 +43,8 @@ Before real-world use, acquire owned registered physical captures with measured 
 ## AWS deployment status
 
 The same actual OpenCV 5 pipeline is containerized for meaningful AWS CPU processing on ECS Express Mode/Fargate; this is prepared infrastructure, **not a deployed service**. The Linux image built successfully on Docker Desktop and passed bearer-authentication probes and an actual opposing-obstacles inspection, returning 0.75 m and 1.65 m². [Build identity and local container evidence](CONTAINER_VERIFICATION.md). A generated Secrets Manager token is prepared for deployment. The manifest passed the [offline CloudFormation schema preflight](AWS.md#offline-cloudformation-schema-preflight) with zero errors and warnings; AWS service-side validation and deployment remain pending. No AWS calls, credentials or provider-model calls were used. [Deployment preparation and required evidence](AWS.md).
+
+A private synchronous Lambda alternative packages the same vision pipeline in the pinned official AWS Python base. Ten actual local emulator calls verified normal fixtures, quality decisions, input refusals and the retained low-contrast failure under a read-only, non-root container. Its manifest and immutable-version evidence collector are prepared and passed local/offline review. [Exact verification and limitations](LAMBDA.md). Lambda is not deployed and no remote AWS execution or judge access is claimed.
 
 ## Remaining entry work
 

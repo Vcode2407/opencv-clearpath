@@ -34,6 +34,8 @@ The detector consumes images and calibration, not expected answers. The fixture 
 
 An ECS Express Mode/Fargate container and infrastructure manifest are prepared for the same OpenCV CPU workload on AWS. The Linux image has now passed a real local build, bearer-authentication checks, and a server-side OpenCV fixture inspection; [recorded evidence](CONTAINER_VERIFICATION.md). The manifest passed the [offline CloudFormation schema preflight](AWS.md#offline-cloudformation-schema-preflight) with zero errors and warnings. AWS service-side validation and deployment have not been performed, and no AWS runtime is claimed. Actual cloud execution and judge access remain pending.
 
+A private synchronous Lambda route was additionally prepared October 14. The official AWS Python base ran the same inspection through its local Runtime Interface Emulator in a read-only, non-root container, with ten successful fixture/refusal assertions. The Lambda template passed blocked-network offline schema checks with zero findings. A guarded collector prepares without AWS calls and supports one separately approved immutable-version invocation. [Local verification and precise cloud gates](LAMBDA.md). These additions do not satisfy actual AWS execution or judge access by themselves.
+
 ## Measured local results
 
 The stored evaluation covers **nine deterministic owned synthetic fixtures**, generated from a known 2.4 × 6.0 metre plane. These are controlled, exactly registered round-trip scenes, not independent photographs or real-world validation.
@@ -45,7 +47,7 @@ The stored evaluation covers **nine deterministic owned synthetic fixtures**, ge
 | Blur, glare, moved camera, tiny calibration | Specific recapture requests; measurements withheld. | Tested quality/geometry decisions change the next action. |
 | Low-contrast object | Missed object; IoU 0.0; true span 1.40 m, reported 2.40 m. | A substantive **1.00 m overestimate** that remains visible in the evaluation. |
 
-The evaluation's nine expected workflow statuses do not mean nine accurate measurements. The low-contrast case is a failure even though its expected status is `review_required`. The README records 31 passing vision/API tests, a passing JavaScript syntax check, and a passing dependency check. The added regressions reject glare in the empty reference without false measurements and return an actionable error for overflowing calibration numbers. See [evaluation JSON](../reports/evaluation.json) and the [technical report](REPORT.md).
+The evaluation's nine expected workflow statuses do not mean nine accurate measurements. The low-contrast case is a failure even though its expected status is `review_required`. The current local suite has 66 passing tests: 31 vision/API checks and 35 Lambda input/receipt/one-attempt checks, plus passing JavaScript syntax and dependency checks. Injected AWS CLI transport in the Lambda tests is not remote execution evidence. The vision regressions reject glare in the empty reference without false measurements and return an actionable error for overflowing calibration numbers. See [evaluation JSON](../reports/evaluation.json) and the [technical report](REPORT.md).
 
 ## Development challenges
 

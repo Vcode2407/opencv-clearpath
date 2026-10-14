@@ -1,0 +1,8 @@
+# AWS's Python runtime includes the Runtime Interface Client and local emulator.
+# Retain the resolved base and final ECR image digests before any deployment.
+FROM public.ecr.aws/lambda/python:3.12@sha256:4b4d6db40cb5fb98fef32bdbe534d6ca52982824314ed7d1fec3ac0d8c9dba4b
+COPY requirements-lambda.txt ${LAMBDA_TASK_ROOT}/
+RUN pip install --no-cache-dir -r ${LAMBDA_TASK_ROOT}/requirements-lambda.txt
+COPY clearpath ${LAMBDA_TASK_ROOT}/clearpath
+COPY fixtures ${LAMBDA_TASK_ROOT}/fixtures
+CMD ["clearpath.lambda_runtime.handler"]

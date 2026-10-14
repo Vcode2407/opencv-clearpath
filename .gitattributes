@@ -3,3 +3,12 @@ docs/media/*.json text eol=lf
 docs/media/*.srt text eol=lf
 docs/media/*.png binary
 docs/media/*.mp4 binary
+# Keep the new Lambda build inputs and verification records consistent at checkout.
+Dockerfile.lambda text eol=lf
+requirements-lambda.txt text eol=lf
+clearpath/lambda_runtime.py text eol=lf
+clearpath/lambda_evidence.py text eol=lf
+tests/test_lambda.py text eol=lf
+infra/lambda.yaml text eol=lf
+docs/LAMBDA.md text eol=lf
+docs/lambda-*.json text eol=lf
